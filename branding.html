@@ -682,54 +682,90 @@
       <!-- ================= SLIDE 21: CONCEPT 03 - ALL VERSIONS (LIGHT CANVAS) ================= -->
       <div id="slide-21" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex flex-col justify-center items-center p-8 slide-enter">
         <div class="absolute top-8 left-8 text-xs text-brand-green tracking-widest uppercase font-bold font-heading">Concept 03 · All Versions (Light Canvas)</div>
-        <div class="flex-grow w-full max-w-4xl flex flex-col justify-between logo-stage-grid rounded-3xl border border-slate-200 p-8 my-8 shadow-inner bg-slate-50 overflow-y-auto">
-          <div class="flex-1 flex flex-col items-center justify-center border-b border-slate-100 py-3">
-            <img src="logos/carepath1.svg" alt="Care Path 1 Light" class="h-[8vh] w-auto max-w-full object-contain">
-            <span class="text-[9px] font-bold text-slate-400 tracking-widest uppercase mt-1">Version 3.1</span>
+        <div class="relative w-full max-w-4xl h-[65vh] flex items-center justify-center my-8">
+          <!-- Prev button -->
+          <button onclick="prevCarePathLight(event)" class="absolute left-4 w-12 h-12 rounded-full bg-white hover:bg-slate-100 border border-slate-200 flex items-center justify-center text-brand-navy shadow-lg z-30 transition">
+            <i class="ti ti-chevron-left text-xl"></i>
+          </button>
+          
+          <!-- Showcase Stage -->
+          <div class="flex flex-col items-center justify-center w-full h-full p-12 logo-stage-grid rounded-3xl border border-slate-200 bg-slate-50 relative overflow-hidden">
+            <!-- Slide 1 -->
+            <div id="cp-light-1" class="cp-light-slide flex flex-col items-center justify-center w-full h-full">
+              <img src="logos/carepath1.svg" alt="Care Path 1" class="h-[40vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-6">Version 3.1</span>
+            </div>
+            <!-- Slide 2 -->
+            <div id="cp-light-2" class="cp-light-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="logos/carepath2.svg" alt="Care Path 2" class="h-[40vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-6">Version 3.2</span>
+            </div>
+            <!-- Slide 3 -->
+            <div id="cp-light-3" class="cp-light-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="logos/carepath3.svg" alt="Care Path 3" class="h-[40vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-6">Version 3.3</span>
+            </div>
+            <!-- Slide 4 -->
+            <div id="cp-light-4" class="cp-light-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="logos/carepath4.svg" alt="Care Path 4" class="h-[40vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-6">Version 3.4</span>
+            </div>
+            <!-- Slide 5 -->
+            <div id="cp-light-5" class="cp-light-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="logos/carepath_web_logo.svg" alt="Care Path Web" class="h-[35vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-6">CarePath Web Logo</span>
+            </div>
           </div>
-          <div class="flex-1 flex flex-col items-center justify-center border-b border-slate-100 py-3">
-            <img src="logos/carepath2.svg" alt="Care Path 2 Light" class="h-[8vh] w-auto max-w-full object-contain">
-            <span class="text-[9px] font-bold text-slate-400 tracking-widest uppercase mt-1">Version 3.2</span>
-          </div>
-          <div class="flex-1 flex flex-col items-center justify-center border-b border-slate-100 py-3">
-            <img src="logos/carepath3.svg" alt="Care Path 3 Light" class="h-[8vh] w-auto max-w-full object-contain">
-            <span class="text-[9px] font-bold text-slate-400 tracking-widest uppercase mt-1">Version 3.3</span>
-          </div>
-          <div class="flex-1 flex flex-col items-center justify-center border-b border-slate-100 py-3">
-            <img src="logos/carepath4.svg" alt="Care Path 4 Light" class="h-[8vh] w-auto max-w-full object-contain">
-            <span class="text-[9px] font-bold text-slate-400 tracking-widest uppercase mt-1">Version 3.4</span>
-          </div>
-          <div class="flex-1 flex flex-col items-center justify-center py-3">
-            <img src="logos/carepath_web_logo.svg" alt="Care Path Web Light" class="h-[8vh] w-auto max-w-full object-contain">
-            <span class="text-[9px] font-bold text-slate-400 tracking-widest uppercase mt-1">CarePath Web Logo</span>
-          </div>
+
+          <!-- Next button -->
+          <button onclick="nextCarePathLight(event)" class="absolute right-4 w-12 h-12 rounded-full bg-white hover:bg-slate-100 border border-slate-200 flex items-center justify-center text-brand-navy shadow-lg z-30 transition">
+            <i class="ti ti-chevron-right text-xl"></i>
+          </button>
         </div>
       </div>
 
       <!-- ================= SLIDE 22: CONCEPT 03 - ALL VERSIONS (DARK CANVAS) ================= -->
       <div id="slide-22" class="absolute inset-0 w-full h-full bg-brand-navy text-white flex flex-col justify-center items-center p-8 slide-enter">
         <div class="absolute top-8 left-8 text-xs text-white/40 tracking-widest uppercase font-bold font-heading">Concept 03 · All Versions (Dark Canvas)</div>
-        <div class="flex-grow w-full max-w-4xl flex flex-col justify-between logo-stage-grid-dark rounded-3xl border border-white/5 p-8 my-8 shadow-2xl bg-black/20 overflow-y-auto">
-          <div class="flex-1 flex flex-col items-center justify-center border-b border-white/5 py-4">
-            <img src="logos/carepath1.svg" alt="Care Path 1 Dark" class="h-[8vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
-            <span class="text-[9px] font-bold text-white/40 tracking-widest uppercase mt-1">Version 3.1</span>
+        <div class="relative w-full max-w-4xl h-[65vh] flex items-center justify-center my-8">
+          <!-- Prev button -->
+          <button onclick="prevCarePathDark(event)" class="absolute left-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center text-white shadow-lg z-30 transition">
+            <i class="ti ti-chevron-left text-xl"></i>
+          </button>
+          
+          <!-- Showcase Stage -->
+          <div class="flex flex-col items-center justify-center w-full h-full p-12 logo-stage-grid-dark rounded-3xl border border-white/5 bg-black/20 relative overflow-hidden">
+            <!-- Slide 1 -->
+            <div id="cp-dark-1" class="cp-dark-slide flex flex-col items-center justify-center w-full h-full">
+              <img src="logos/carepath1.svg" alt="Care Path 1" class="h-[40vh] w-auto max-w-[80%] object-contain" style="filter: brightness(0) invert(1);">
+              <span class="text-xs font-bold text-white/40 uppercase tracking-widest mt-6">Version 3.1</span>
+            </div>
+            <!-- Slide 2 -->
+            <div id="cp-dark-2" class="cp-dark-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="logos/carepath2.svg" alt="Care Path 2" class="h-[40vh] w-auto max-w-[80%] object-contain" style="filter: brightness(0) invert(1);">
+              <span class="text-xs font-bold text-white/40 uppercase tracking-widest mt-6">Version 3.2</span>
+            </div>
+            <!-- Slide 3 -->
+            <div id="cp-dark-3" class="cp-dark-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="logos/carepath3.svg" alt="Care Path 3" class="h-[40vh] w-auto max-w-[80%] object-contain" style="filter: brightness(0) invert(1);">
+              <span class="text-[9px] font-bold text-white/40 tracking-widest uppercase mt-6">Version 3.3</span>
+            </div>
+            <!-- Slide 4 -->
+            <div id="cp-dark-4" class="cp-dark-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="logos/carepath4.svg" alt="Care Path 4" class="h-[40vh] w-auto max-w-[80%] object-contain" style="filter: brightness(0) invert(1);">
+              <span class="text-xs font-bold text-white/40 uppercase tracking-widest mt-6">Version 3.4</span>
+            </div>
+            <!-- Slide 5 -->
+            <div id="cp-dark-5" class="cp-dark-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="logos/carepath_web_logo.svg" alt="Care Path Web" class="h-[35vh] w-auto max-w-[80%] object-contain" style="filter: brightness(0) invert(1);">
+              <span class="text-xs font-bold text-white/40 uppercase tracking-widest mt-6">CarePath Web Logo</span>
+            </div>
           </div>
-          <div class="flex-1 flex flex-col items-center justify-center border-b border-white/5 py-4">
-            <img src="logos/carepath2.svg" alt="Care Path 2 Dark" class="h-[8vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
-            <span class="text-[9px] font-bold text-white/40 tracking-widest uppercase mt-1">Version 3.2</span>
-          </div>
-          <div class="flex-1 flex flex-col items-center justify-center border-b border-white/5 py-4">
-            <img src="logos/carepath3.svg" alt="Care Path 3 Dark" class="h-[8vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
-            <span class="text-[9px] font-bold text-white/40 tracking-widest uppercase mt-1">Version 3.3</span>
-          </div>
-          <div class="flex-1 flex flex-col items-center justify-center border-b border-white/5 py-4">
-            <img src="logos/carepath4.svg" alt="Care Path 4 Dark" class="h-[8vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
-            <span class="text-[9px] font-bold text-white/40 tracking-widest uppercase mt-1">Version 3.4</span>
-          </div>
-          <div class="flex-1 flex flex-col items-center justify-center py-4">
-            <img src="logos/carepath_web_logo.svg" alt="Care Path Web Dark" class="h-[8vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
-            <span class="text-[9px] font-bold text-white/40 tracking-widest uppercase mt-1">CarePath Web Logo</span>
-          </div>
+
+          <!-- Next button -->
+          <button onclick="nextCarePathDark(event)" class="absolute right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center text-white shadow-lg z-30 transition">
+            <i class="ti ti-chevron-right text-xl"></i>
+          </button>
         </div>
       </div>
 
@@ -1090,6 +1126,64 @@
         toast.classList.add('translate-y-12', 'opacity-0');
         toast.classList.remove('translate-y-0', 'opacity-100');
       }, 2500);
+    }
+
+    
+    // Care Path slideshow controls
+    let currentCPLight = 1;
+    let currentCPDark = 1;
+    const totalCP = 5;
+
+    function showCPLight(index) {
+      if (index < 1) index = totalCP;
+      if (index > totalCP) index = 1;
+      for (let i = 1; i <= totalCP; i++) {
+        const slide = document.getElementById(`cp-light-${i}`);
+        if (slide) {
+          slide.classList.add('hidden');
+        }
+      }
+      const active = document.getElementById(`cp-light-${index}`);
+      if (active) {
+        active.classList.remove('hidden');
+      }
+      currentCPLight = index;
+    }
+
+    function prevCarePathLight(e) {
+      e.stopPropagation();
+      showCPLight(currentCPLight - 1);
+    }
+
+    function nextCarePathLight(e) {
+      e.stopPropagation();
+      showCPLight(currentCPLight + 1);
+    }
+
+    function showCPDark(index) {
+      if (index < 1) index = totalCP;
+      if (index > totalCP) index = 1;
+      for (let i = 1; i <= totalCP; i++) {
+        const slide = document.getElementById(`cp-dark-${i}`);
+        if (slide) {
+          slide.classList.add('hidden');
+        }
+      }
+      const active = document.getElementById(`cp-dark-${index}`);
+      if (active) {
+        active.classList.remove('hidden');
+      }
+      currentCPDark = index;
+    }
+
+    function prevCarePathDark(e) {
+      e.stopPropagation();
+      showCPDark(currentCPDark - 1);
+    }
+
+    function nextCarePathDark(e) {
+      e.stopPropagation();
+      showCPDark(currentCPDark + 1);
     }
 
     // Init
