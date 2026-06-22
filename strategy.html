@@ -54,6 +54,43 @@
       background-size: 24px 24px;
       background-position: 0 0, 12px 12px;
     }
+    
+    /* Zoom/Presentation-friendly font scale overrides */
+    @media (min-width: 1024px) {
+      .slide-active p, 
+      .slide-active .text-slate-600, 
+      .slide-active .text-slate-500 {
+        font-size: 1.25rem !important; /* ~20px */
+        line-height: 1.8rem !important;
+      }
+      .slide-active h2 {
+        font-size: 3.5rem !important; /* ~56px */
+        line-height: 1.15 !important;
+      }
+      .slide-active h1 {
+        font-size: 4.5rem !important; /* ~72px */
+        line-height: 1.1 !important;
+      }
+      .slide-active .text-xs {
+        font-size: 1rem !important; /* ~16px */
+        letter-spacing: 0.15em !important;
+      }
+      .slide-active .text-sm {
+        font-size: 1.125rem !important; /* ~18px */
+      }
+      .slide-active .text-\[10px\] {
+        font-size: 0.95rem !important; /* ~15px */
+      }
+      .slide-active table th {
+        font-size: 1.125rem !important;
+      }
+      .slide-active table td {
+        font-size: 1.25rem !important;
+      }
+      .slide-active .font-bold.text-xs {
+        font-size: 1.125rem !important;
+      }
+    }
   </style>
 </head>
 <body class="bg-black text-white font-sans overflow-hidden select-none">
