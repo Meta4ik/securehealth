@@ -70,6 +70,83 @@
 </head>
 <body class="bg-black text-white font-sans overflow-hidden select-none">
 
+  <!-- SIDEBAR NAVIGATION MENU -->
+  <div id="sidebar-overlay" onclick="toggleSidebar(event)" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden transition-opacity duration-300 opacity-0"></div>
+  <aside id="sidebar-menu" class="fixed left-0 top-0 bottom-0 w-80 bg-brand-navy border-r border-white/10 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl">
+    <div class="h-16 px-6 border-b border-white/5 flex items-center justify-between flex-shrink-0">
+      <div class="font-heading font-bold text-xs tracking-widest text-brand-green">PRESENTATION INDEX</div>
+      <button onclick="toggleSidebar(event)" class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 text-white transition">
+        <i class="ti ti-x text-sm"></i>
+      </button>
+    </div>
+    
+    <div class="flex-grow overflow-y-auto p-4 space-y-4" id="sidebar-list">
+      <!-- Intro Section -->
+      <div>
+        <div class="text-[9px] font-bold text-white/30 tracking-[0.2em] uppercase px-3 mb-1">Introduction</div>
+        <div class="space-y-0.5">
+          <a href="#" id="sidebar-item-1" onclick="goToSlide(1, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">01. Title Cover</a>
+          <a href="#" id="sidebar-item-2" onclick="goToSlide(2, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">02. Brand Vision</a>
+          <a href="#" id="sidebar-item-3" onclick="goToSlide(3, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">03. Brand Attributes</a>
+          <a href="#" id="sidebar-item-4" onclick="goToSlide(4, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">04. Brand Colors</a>
+        </div>
+      </div>
+
+      <!-- Concept 1 -->
+      <div>
+        <div class="text-[9px] font-bold text-brand-blue/50 tracking-[0.2em] uppercase px-3 mb-1">Concept 01 · The Navigator</div>
+        <div class="space-y-0.5">
+          <a href="#" id="sidebar-item-5" onclick="goToSlide(5, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">05. Section Intro</a>
+          <a href="#" id="sidebar-item-6" onclick="goToSlide(6, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">06. Concept Details</a>
+          <a href="#" id="sidebar-item-7" onclick="goToSlide(7, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">07. Light Canvas (All versions)</a>
+          <a href="#" id="sidebar-item-8" onclick="goToSlide(8, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">08. Dark Canvas (All versions)</a>
+          <a href="#" id="sidebar-item-9" onclick="goToSlide(9, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">09. Navigator 1 Dedicated Page</a>
+          <a href="#" id="sidebar-item-10" onclick="goToSlide(10, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">10. Navigator 2 Dedicated Page</a>
+          <a href="#" id="sidebar-item-11" onclick="goToSlide(11, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">11. UI Applications</a>
+        </div>
+      </div>
+
+      <!-- Concept 2 -->
+      <div>
+        <div class="text-[9px] font-bold text-brand-violet/50 tracking-[0.2em] uppercase px-3 mb-1">Concept 02 · The Connection</div>
+        <div class="space-y-0.5">
+          <a href="#" id="sidebar-item-12" onclick="goToSlide(12, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">12. Section Intro</a>
+          <a href="#" id="sidebar-item-13" onclick="goToSlide(13, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">13. Concept Details</a>
+          <a href="#" id="sidebar-item-14" onclick="goToSlide(14, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">14. Light Canvas (All versions)</a>
+          <a href="#" id="sidebar-item-15" onclick="goToSlide(15, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">15. Dark Canvas (All versions)</a>
+          <a href="#" id="sidebar-item-16" onclick="goToSlide(16, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">16. Connection 1 Dedicated Page</a>
+          <a href="#" id="sidebar-item-17" onclick="goToSlide(17, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">17. Connection 2 Dedicated Page</a>
+          <a href="#" id="sidebar-item-18" onclick="goToSlide(18, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">18. UI Applications</a>
+        </div>
+      </div>
+
+      <!-- Concept 3 -->
+      <div>
+        <div class="text-[9px] font-bold text-brand-green/50 tracking-[0.2em] uppercase px-3 mb-1">Concept 03 · The Care Path</div>
+        <div class="space-y-0.5">
+          <a href="#" id="sidebar-item-19" onclick="goToSlide(19, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">19. Section Intro</a>
+          <a href="#" id="sidebar-item-20" onclick="goToSlide(20, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">20. Concept Details (Slideshow)</a>
+          <a href="#" id="sidebar-item-21" onclick="goToSlide(21, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">21. Light Canvas (Slideshow)</a>
+          <a href="#" id="sidebar-item-22" onclick="goToSlide(22, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">22. Dark Canvas (Slideshow)</a>
+          <a href="#" id="sidebar-item-23" onclick="goToSlide(23, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">23. Care Path 1 Dedicated Page</a>
+          <a href="#" id="sidebar-item-24" onclick="goToSlide(24, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">24. Care Path 2 Dedicated Page</a>
+          <a href="#" id="sidebar-item-25" onclick="goToSlide(25, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">25. Care Path 3 Dedicated Page</a>
+          <a href="#" id="sidebar-item-26" onclick="goToSlide(26, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">26. Care Path 4 Dedicated Page</a>
+          <a href="#" id="sidebar-item-27" onclick="goToSlide(27, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">27. Web Logo Dedicated Page</a>
+          <a href="#" id="sidebar-item-28" onclick="goToSlide(28, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">28. UI Applications</a>
+        </div>
+      </div>
+
+      <!-- Decision Matrix -->
+      <div>
+        <div class="text-[9px] font-bold text-white/30 tracking-[0.2em] uppercase px-3 mb-1">Evaluation</div>
+        <div class="space-y-0.5">
+          <a href="#" id="sidebar-item-29" onclick="goToSlide(29, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">29. Decision Matrix</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
   <!-- MAIN DECK WINDOW -->
   <main class="relative w-screen h-screen flex flex-col justify-between bg-black">
     
@@ -79,6 +156,9 @@
         <a href="index.html" class="w-8 h-8 rounded-lg bg-brand-navy border border-white/10 flex items-center justify-center text-white font-bold hover:bg-white/10 transition">
           <i class="ti ti-arrow-left text-sm"></i>
         </a>
+        <button onclick="toggleSidebar(event)" class="w-8 h-8 rounded-lg bg-brand-navy border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition" title="Open Index">
+          <i class="ti ti-menu-2 text-sm"></i>
+        </button>
         <div class="text-xs tracking-[0.25em] font-bold text-white/50 uppercase font-heading">
           SECURE HEALTH <span class="text-brand-green">//</span> BRAND IDENTITY PRESENTATION
         </div>
@@ -988,6 +1068,9 @@
           <i class="ti ti-chevron-left text-lg"></i>
         </button>
         <span class="text-xs font-mono text-white/50" id="slide-num">Slide 1 / 29</span>
+        <button onclick="toggleSidebar(event)" class="text-xs font-bold tracking-wider uppercase border border-white/10 bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition text-white/70 hover:text-white" title="Toggle Slide Index">
+          <i class="ti ti-menu-2"></i> Menu
+        </button>
         <button onclick="nextSlide()" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 active:scale-95 transition text-white">
           <i class="ti ti-chevron-right text-lg"></i>
         </button>
@@ -1041,6 +1124,17 @@
 
       // Update dots active class
       updateDots();
+
+      // Highlight active sidebar item
+      document.querySelectorAll('.sidebar-item').forEach(item => {
+        item.classList.remove('bg-brand-green/20', 'text-brand-green', 'border-l-2', 'border-brand-green', 'pl-2');
+        item.classList.add('text-white/70');
+      });
+      const activeItem = document.getElementById(`sidebar-item-${index}`);
+      if (activeItem) {
+        activeItem.classList.add('bg-brand-green/20', 'text-brand-green', 'border-l-2', 'border-brand-green', 'pl-2');
+        activeItem.classList.remove('text-white/70');
+      }
     }
 
     // Toggle Present Mode
@@ -1222,6 +1316,42 @@
     function nextCarePathDark(e) {
       e.stopPropagation();
       showCPDark(currentCPDark + 1);
+    }
+
+    // Sidebar Controls
+    function toggleSidebar(e) {
+      if (e) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      const menu = document.getElementById('sidebar-menu');
+      const overlay = document.getElementById('sidebar-overlay');
+      const isHidden = menu.classList.contains('-translate-x-full');
+      
+      if (isHidden) {
+        menu.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+        setTimeout(() => {
+          overlay.classList.remove('opacity-0');
+          overlay.classList.add('opacity-100');
+        }, 10);
+      } else {
+        menu.classList.add('-translate-x-full');
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0');
+        setTimeout(() => {
+          overlay.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    function goToSlide(index, e) {
+      if (e) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      showSlide(index);
+      toggleSidebar();
     }
 
     // Init
