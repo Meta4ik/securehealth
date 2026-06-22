@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureHealth - Enrollment Technology Strategy Presentation</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#071A52',
+              green: '#18B77A',
+              blue: '#009FE3',
+              violet: '#6E5AEF',
+              lightGray: '#F5F7FA',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Avenir', 'Helvetica Neue', 'sans-serif'],
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .slide-enter {
+      opacity: 0;
+      transform: scale(0.99) translateY(4px);
+    }
+    .slide-active {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .watermark-pattern {
+      background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 0), radial-gradient(rgba(255,255,255,0.06) 1px, transparent 0);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+    }
+    .watermark-pattern-dark {
+      background-image: radial-gradient(rgba(7,26,82,0.02) 1px, transparent 0), radial-gradient(rgba(7,26,82,0.02) 1px, transparent 0);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans overflow-hidden select-none">
+
+  <!-- MAIN PRESENTATION CONTAINER -->
+  <main class="relative w-screen h-screen flex flex-col justify-between bg-black">
+    
+    <!-- TOP BAR (Hidden in Present Mode) -->
+    <header id="deck-header" class="h-16 px-8 flex items-center justify-between z-30 border-b border-white/5 bg-brand-navy/60 backdrop-blur-md transition-all duration-300">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="w-8 h-8 rounded-lg bg-brand-navy border border-white/10 flex items-center justify-center text-white font-bold hover:bg-white/10 transition">
+          <i class="ti ti-arrow-left text-sm"></i>
+        </a>
+        <div class="text-xs tracking-[0.25em] font-bold text-white/50 uppercase font-heading">
+          SECURE HEALTH <span class="text-brand-green">//</span> ENROLLMENT TECH STRATEGY
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="togglePresentMode()" class="text-xs font-bold tracking-wider uppercase border border-white/10 bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg flex items-center gap-2 transition">
+          <i class="ti ti-presentation"></i> <span id="btn-present-text">Present Mode</span>
+        </button>
+        <button onclick="toggleFullscreen()" class="text-white/60 hover:text-white transition p-2">
+          <i id="fs-icon" class="ti ti-maximize text-lg"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- SLIDES WRAPPER -->
+    <div class="relative flex-grow flex items-center justify-center overflow-hidden p-0 md:p-6">
+      
+      <!-- ================= SLIDE 01: COVER ================= -->
+      <div id="slide-1" class="absolute inset-0 w-full h-full bg-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="absolute inset-0 watermark-pattern opacity-30 pointer-events-none"></div>
+        <div class="max-w-5xl w-full text-center flex flex-col items-center z-10">
+          <span class="text-brand-green text-xs font-bold tracking-[0.25em] uppercase mb-4 font-heading">STRATEGY BRIEFING</span>
+          <h1 class="text-4xl md:text-6xl font-heading font-extrabold tracking-wide mb-3 leading-tight">
+            Secure Health Enrollment Technology Flow
+          </h1>
+          <p class="text-base md:text-lg text-white/60 font-light max-w-2xl mb-12">
+            Education First. Simple Guidance. Secure Enrollment.
+          </p>
+
+          <!-- Flow Diagram -->
+          <div class="w-full max-w-4xl bg-black/20 border border-white/5 rounded-2xl p-6 mb-12 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex-1 text-center py-3 bg-white/5 rounded-xl border border-white/10">
+              <div class="text-sm font-bold text-white tracking-wide">Consumer</div>
+            </div>
+            <i class="ti ti-arrow-right text-brand-green hidden md:block text-xl"></i>
+            <i class="ti ti-arrow-down text-brand-green md:hidden text-xl"></i>
+            <div class="flex-1 text-center py-3 bg-brand-green/20 rounded-xl border border-brand-green/30">
+              <div class="text-sm font-bold text-brand-green tracking-wide">Secure Health Portal</div>
+            </div>
+            <i class="ti ti-arrow-right text-brand-green hidden md:block text-xl"></i>
+            <i class="ti ti-arrow-down text-brand-green md:hidden text-xl"></i>
+            <div class="flex-1 text-center py-3 bg-brand-blue/20 rounded-xl border border-brand-blue/30">
+              <div class="text-sm font-bold text-brand-blue tracking-wide">Smart Intake</div>
+            </div>
+            <i class="ti ti-arrow-right text-brand-green hidden md:block text-xl"></i>
+            <i class="ti ti-arrow-down text-brand-green md:hidden text-xl"></i>
+            <div class="flex-1 text-center py-3 bg-brand-violet/20 rounded-xl border border-brand-violet/30">
+              <div class="text-sm font-bold text-brand-violet tracking-wide">Insurance Tech Platform</div>
+            </div>
+            <i class="ti ti-arrow-right text-brand-green hidden md:block text-xl"></i>
+            <i class="ti ti-arrow-down text-brand-green md:hidden text-xl"></i>
+            <div class="flex-1 text-center py-3 bg-white/5 rounded-xl border border-white/10">
+              <div class="text-sm font-bold text-white tracking-wide">Carriers</div>
+            </div>
+          </div>
+
+          <div class="text-xs text-white/50 max-w-2xl leading-relaxed">
+            <strong>Key Message:</strong> Secure Health simplifies the customer experience while established insurance technology partners handle complex carrier connectivity behind the scenes.
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 02: STEP 1 ================= -->
+      <div id="slide-2" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="absolute inset-0 watermark-pattern-dark opacity-10 pointer-events-none"></div>
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          <div class="space-y-6">
+            <span class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase font-heading">STEP 1</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 leading-tight">
+              Consumer Completes Secure Health Guided Form
+            </h2>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+              Secure Health collects the essential parameters needed to generate a personalized health guide. By separating intake questions, we match users into their exact situation lane.
+            </p>
+            <div class="grid grid-cols-2 gap-4 text-xs font-semibold text-slate-700">
+              <div class="flex items-center gap-2"><i class="ti ti-circle-check text-brand-green"></i> lost employer coverage</div>
+              <div class="flex items-center gap-2"><i class="ti ti-circle-check text-brand-green"></i> I’m turning 65</div>
+              <div class="flex items-center gap-2"><i class="ti ti-circle-check text-brand-green"></i> I need health insurance</div>
+              <div class="flex items-center gap-2"><i class="ti ti-circle-check text-brand-green"></i> Group employer needs</div>
+            </div>
+            <div class="p-4 bg-brand-lightGray border-l-4 border-brand-green rounded-r-lg">
+              <div class="text-xs font-bold text-slate-800">Result:</div>
+              <p class="text-xs text-slate-500 mt-1">A secure consumer profile is created to guide the enrollment process.</p>
+            </div>
+          </div>
+
+          <!-- Mockup Website Form -->
+          <div class="bg-brand-lightGray rounded-3xl border border-slate-200 p-6 shadow-lg space-y-4">
+            <div class="flex items-center gap-2 border-b border-slate-200 pb-3">
+              <div class="w-3 h-3 rounded-full bg-red-400"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+              <div class="w-3 h-3 rounded-full bg-green-400"></div>
+              <span class="text-[10px] text-slate-400 ml-2 font-mono">securehealth.com/intake</span>
+            </div>
+            <div class="space-y-3">
+              <div class="text-xs font-bold text-slate-700 font-heading">Choose Your Situation:</div>
+              <div class="grid grid-cols-2 gap-2 text-[10px]">
+                <div class="p-3 bg-white border border-slate-200 rounded-xl font-bold flex items-center gap-2 cursor-pointer shadow-sm"><i class="ti ti-user-plus text-brand-green"></i> Turning 65</div>
+                <div class="p-3 bg-brand-navy text-white rounded-xl font-bold flex items-center gap-2 cursor-pointer shadow-sm"><i class="ti ti-briefcase text-brand-green"></i> Job Transition</div>
+              </div>
+              <div class="space-y-2">
+                <div class="text-xs font-bold text-slate-700 font-heading">Demographics Collected:</div>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="bg-white border border-slate-200 p-2 rounded-lg text-center text-[10px] text-slate-500">ZIP: 75201</div>
+                  <div class="bg-white border border-slate-200 p-2 rounded-lg text-center text-[10px] text-slate-500">DOB: 10/12/1980</div>
+                  <div class="bg-white border border-slate-200 p-2 rounded-lg text-center text-[10px] text-slate-500">Size: 3 People</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 03: STEP 2 ================= -->
+      <div id="slide-3" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          <div class="space-y-6">
+            <span class="text-xs font-bold tracking-[0.2em] text-brand-blue uppercase font-heading">STEP 2</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 leading-tight">
+              Insurance Technology Platform Connection
+            </h2>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+              Instead of Secure Health maintaining hundreds of individual carrier connections, the platform integrates with established insurance technology infrastructure.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="p-3 bg-brand-lightGray border border-slate-200 rounded-xl">
+                <div class="font-bold text-brand-navy">HealthSherpa</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">ACA Marketplace tools</div>
+              </div>
+              <div class="p-3 bg-brand-lightGray border border-slate-200 rounded-xl">
+                <div class="font-bold text-brand-navy">SunFire / Connecture</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Medicare shopping APIs</div>
+              </div>
+              <div class="p-3 bg-brand-lightGray border border-slate-200 rounded-xl">
+                <div class="font-bold text-brand-navy">Ideon</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Carrier API connectivity</div>
+              </div>
+              <div class="p-3 bg-brand-lightGray border border-slate-200 rounded-xl">
+                <div class="font-bold text-brand-navy">Noyo / Benefitter</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Group benefits tech</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flow Diagram Vector -->
+          <div class="bg-brand-lightGray border border-slate-200 rounded-3xl p-8 flex flex-col items-center justify-center gap-6">
+            <div class="w-full text-center py-4 bg-brand-navy text-white rounded-2xl shadow-md">
+              <div class="text-sm font-bold font-heading">Secure Health</div>
+              <div class="text-[10px] text-white/50">Consumer Portal</div>
+            </div>
+            
+            <i class="ti ti-arrow-down text-brand-blue text-2xl"></i>
+            
+            <div class="w-full text-center py-4 bg-brand-blue text-white rounded-2xl shadow-md relative">
+              <div class="absolute -right-2 top-1/2 -translate-y-1/2 bg-brand-green text-[9px] font-bold px-2 py-0.5 rounded-full">SECURE API</div>
+              <div class="text-sm font-bold font-heading">Insurance Tech API Hub</div>
+              <div class="text-[10px] text-white/70">HealthSherpa · Ideon · SunFire</div>
+            </div>
+            
+            <i class="ti ti-arrow-down text-brand-blue text-2xl"></i>
+
+            <div class="grid grid-cols-3 gap-2 w-full">
+              <div class="bg-white border border-slate-200 py-3 rounded-lg text-center text-xs font-bold text-slate-700 shadow-sm">Carrier A</div>
+              <div class="bg-white border border-slate-200 py-3 rounded-lg text-center text-xs font-bold text-slate-700 shadow-sm">Carrier B</div>
+              <div class="bg-white border border-slate-200 py-3 rounded-lg text-center text-xs font-bold text-slate-700 shadow-sm">Carrier C</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 04: STEP 3 ================= -->
+      <div id="slide-4" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          <div class="space-y-6">
+            <span class="text-xs font-bold tracking-[0.2em] text-brand-violet uppercase font-heading">STEP 3</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 leading-tight">
+              Secure Health Presents Plan Options
+            </h2>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+              We present plan comparisons with an education-led mindset. Instead of telling the consumer <em>"Buy this plan"</em>, we provide clear context so they can confidently decide.
+            </p>
+            <div class="p-4 bg-brand-lightGray border-l-4 border-brand-violet rounded-r-lg">
+              <div class="text-xs font-bold text-brand-navy uppercase tracking-wider">Brand Position:</div>
+              <p class="text-xs text-slate-500 mt-1">No pressure. No confusion. Just facts. Then you decide.</p>
+            </div>
+          </div>
+
+          <!-- Mockup Insurance Cards -->
+          <div class="space-y-3">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-widest font-heading mb-2">Available Options</div>
+            
+            <!-- Option A -->
+            <div class="bg-brand-lightGray border border-slate-200 rounded-xl p-4 flex justify-between items-center shadow-sm">
+              <div class="space-y-1">
+                <div class="text-xs font-bold text-brand-navy">Plan Option A</div>
+                <div class="text-[10px] text-slate-400">✓ Preventive care · ✓ In-Network doctor availability</div>
+              </div>
+              <span class="text-xs font-bold text-brand-blue">$240<span class="text-[9px] text-slate-400 font-normal">/mo</span></span>
+            </div>
+
+            <!-- Option B -->
+            <div class="bg-brand-lightGray border border-slate-200 rounded-xl p-4 flex justify-between items-center shadow-sm">
+              <div class="space-y-1">
+                <div class="text-xs font-bold text-brand-navy">Plan Option B</div>
+                <div class="text-[10px] text-slate-400">✓ Alternative network · ✓ Savings account eligibility</div>
+              </div>
+              <span class="text-xs font-bold text-brand-blue">$310<span class="text-[9px] text-slate-400 font-normal">/mo</span></span>
+            </div>
+
+            <!-- Option C -->
+            <div class="bg-brand-lightGray border border-slate-200 rounded-xl p-4 flex justify-between items-center shadow-sm">
+              <div class="space-y-1">
+                <div class="text-xs font-bold text-brand-navy">Plan Option C</div>
+                <div class="text-[10px] text-slate-400">✓ Flexible copays · ✓ Comprehensive prescription guide</div>
+              </div>
+              <span class="text-xs font-bold text-brand-blue">$380<span class="text-[9px] text-slate-400 font-normal">/mo</span></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 05: STEP 4 ================= -->
+      <div id="slide-5" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="max-w-5xl w-full">
+          <div class="text-center mb-12">
+            <span class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase font-heading">STEP 4</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 mt-2">Consumer Decision Experience</h2>
+            <p class="text-slate-500 mt-2 text-sm md:text-base">The consumer remains within a simple, clean Secure Health experience while the complexity is handled behind the scenes.</p>
+          </div>
+
+          <!-- Customer Journey Timeline -->
+          <div class="grid grid-cols-5 gap-4 items-center">
+            
+            <div class="bg-brand-lightGray border border-slate-200 rounded-2xl p-5 text-center shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center mx-auto mb-3"><i class="ti ti-search"></i></div>
+              <div class="font-heading font-bold text-xs">Explore Options</div>
+            </div>
+            
+            <i class="ti ti-chevron-right text-brand-green text-center text-lg"></i>
+            
+            <div class="bg-brand-lightGray border border-slate-200 rounded-2xl p-5 text-center shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-brand-blue/20 text-brand-blue flex items-center justify-center mx-auto mb-3"><i class="ti ti-book"></i></div>
+              <div class="font-heading font-bold text-xs">Understand</div>
+            </div>
+            
+            <i class="ti ti-chevron-right text-brand-green text-center text-lg"></i>
+
+            <div class="bg-brand-lightGray border border-slate-200 rounded-2xl p-5 text-center shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-brand-violet/20 text-brand-violet flex items-center justify-center mx-auto mb-3"><i class="ti ti-help"></i></div>
+              <div class="font-heading font-bold text-xs">Ask &amp; Decide</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 06: STEP 5 ================= -->
+      <div id="slide-6" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          <div class="space-y-6">
+            <span class="text-xs font-bold tracking-[0.2em] text-brand-blue uppercase font-heading">STEP 5</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 leading-tight">
+              Licensed Enrollment Workflow
+            </h2>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+              Behind the scenes, enrollment technology manages carrier formatting, eligibility workflows, compliance disclosures, and confirmation tracking.
+            </p>
+            <div class="grid grid-cols-2 gap-3 text-xs text-slate-700">
+              <div class="flex items-center gap-2"><i class="ti ti-circle-check text-brand-green"></i> Carrier formatting</div>
+              <div class="flex items-center gap-2"><i class="ti ti-circle-check text-brand-green"></i> Eligibility workflows</div>
+              <div class="flex items-center gap-2"><i class="ti ti-circle-check text-brand-green"></i> Required disclosures</div>
+              <div class="flex items-center gap-2"><i class="ti ti-circle-check text-brand-green"></i> Confirmation tracking</div>
+            </div>
+          </div>
+
+          <!-- Status tracker UI -->
+          <div class="bg-brand-lightGray border border-slate-200 rounded-3xl p-8 space-y-6">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider font-heading">Secure Health Status Visibility</div>
+            
+            <div class="space-y-4">
+              <!-- Submitted -->
+              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <span class="text-xs font-bold text-slate-700">Application Submitted</span>
+                <span class="text-[10px] bg-brand-green/20 text-brand-green font-bold px-2 py-0.5 rounded-full">COMPLETED</span>
+              </div>
+              <!-- Processing -->
+              <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+                <span class="text-xs font-bold text-slate-700">Carrier Processing</span>
+                <span class="text-[10px] bg-brand-blue/20 text-brand-blue font-bold px-2 py-0.5 rounded-full">ACTIVE</span>
+              </div>
+              <!-- Approved -->
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-700">Final Approval &amp; Tracking</span>
+                <span class="text-[10px] bg-slate-200 text-slate-400 font-bold px-2 py-0.5 rounded-full">PENDING</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 07: CLIENT EXPLANATION ================= -->
+      <div id="slide-7" class="absolute inset-0 w-full h-full bg-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="absolute inset-0 watermark-pattern opacity-20 pointer-events-none"></div>
+        <div class="max-w-4xl w-full px-6 md:px-12 text-center">
+          <div class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase mb-6 font-heading">
+            CLIENT BRIEFING
+          </div>
+          <h2 class="text-2xl md:text-4xl font-heading font-extrabold leading-relaxed text-white">
+            "Secure Health does not need to recreate the insurance industry’s existing technology infrastructure. Building individual connections with every carrier creates unnecessary complexity. 
+            <br><br>
+            Instead, Secure Health becomes the trusted consumer education and guidance platform."
+          </h2>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 08: ROADMAP PHASE 1 ================= -->
+      <div id="slide-8" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          <div class="space-y-6">
+            <span class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase font-heading">PHASE 1</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 leading-tight">
+              Platform Foundation
+            </h2>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+              Build the Secure Health core customer experience quickly. We focus on establishing the website platform, educational guides, intake forms, and CRM customer management workflows first.
+            </p>
+            <div class="h-px bg-slate-200"></div>
+            <div class="text-xs font-bold text-brand-navy uppercase tracking-wider font-heading">GOAL:</div>
+            <p class="text-xs text-slate-500">Launch the Secure Health experience quickly and build the customer journey foundation.</p>
+          </div>
+
+          <!-- Feature Cards -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 bg-brand-lightGray border border-slate-200 rounded-xl shadow-sm">
+              <i class="ti ti-world text-brand-green text-lg mb-2"></i>
+              <div class="font-bold text-xs text-brand-navy">Website Platform</div>
+            </div>
+            <div class="p-4 bg-brand-lightGray border border-slate-200 rounded-xl shadow-sm">
+              <i class="ti ti-forms text-brand-green text-lg mb-2"></i>
+              <div class="font-bold text-xs text-brand-navy">Smart Intake Forms</div>
+            </div>
+            <div class="p-4 bg-brand-lightGray border border-slate-200 rounded-xl shadow-sm">
+              <i class="ti ti-users text-brand-green text-lg mb-2"></i>
+              <div class="font-bold text-xs text-brand-navy">CRM &amp; Lead Workflow</div>
+            </div>
+            <div class="p-4 bg-brand-lightGray border border-slate-200 rounded-xl shadow-sm">
+              <i class="ti ti-calendar text-brand-green text-lg mb-2"></i>
+              <div class="font-bold text-xs text-brand-navy">Appointment Booking</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 09: ROADMAP PHASE 2 ================= -->
+      <div id="slide-9" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          
+          <div class="space-y-6">
+            <span class="text-xs font-bold tracking-[0.2em] text-brand-blue uppercase font-heading">PHASE 2</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 leading-tight">
+              Insurance Technology Expansion
+            </h2>
+            <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+              Future enhancements bring deep digital connectivity, introducing insurance API integrations, automated quoting engines, carrier submissions, and real-time application tracking.
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700 font-semibold">
+              <div>✓ Real-time plan availability</div>
+              <div>✓ Automated quoting tools</div>
+              <div>✓ Partner agreements</div>
+              <div>✓ Carrier access requirements</div>
+            </div>
+          </div>
+
+          <!-- Feature Cards -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 bg-brand-lightGray border border-slate-200 rounded-xl shadow-sm">
+              <i class="ti ti-code-plus text-brand-blue text-lg mb-2"></i>
+              <div class="font-bold text-xs text-brand-navy">API Integrations</div>
+            </div>
+            <div class="p-4 bg-brand-lightGray border border-slate-200 rounded-xl shadow-sm">
+              <i class="ti ti-calculator text-brand-blue text-lg mb-2"></i>
+              <div class="font-bold text-xs text-brand-navy">Automated Quoting</div>
+            </div>
+            <div class="p-4 bg-brand-lightGray border border-slate-200 rounded-xl shadow-sm">
+              <i class="ti ti-database text-brand-blue text-lg mb-2"></i>
+              <div class="font-bold text-xs text-brand-navy">Plan Data Sync</div>
+            </div>
+            <div class="p-4 bg-brand-lightGray border border-slate-200 rounded-xl shadow-sm">
+              <i class="ti ti-shield-check text-brand-blue text-lg mb-2"></i>
+              <div class="font-bold text-xs text-brand-navy">Compliance Workflows</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 10: INTEGRATION LEVELS ================= -->
+      <div id="slide-10" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex flex-col justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full mx-auto">
+          <div class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase mb-4 font-heading">
+            TECHNICAL LAYERS
+          </div>
+          <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 mb-8">Integration Levels</h2>
+          
+          <table class="w-full border-collapse text-left text-xs md:text-sm">
+            <thead>
+              <tr class="border-b-2 border-slate-200 text-slate-400 font-bold uppercase tracking-wider text-[10px]">
+                <th class="py-3 px-4">Level</th>
+                <th class="py-3 px-4">Technical Stack</th>
+                <th class="py-3 px-4">Purpose / Action</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-4 px-4 font-bold text-brand-navy">Foundation Level</td>
+                <td class="py-4 px-4 font-mono text-[11px] text-slate-500">Website + CRM Workflow</td>
+                <td class="py-4 px-4 text-slate-600">Collect consumer information, provide guides, schedule appointments.</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 font-bold text-brand-navy">Advanced Level</td>
+                <td class="py-4 px-4 font-mono text-[11px] text-slate-500">Plan Data Integration</td>
+                <td class="py-4 px-4 text-slate-600">Display available options, compare coverage choices, support decisions.</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 font-bold text-brand-navy">Full Automation</td>
+                <td class="py-4 px-4 font-mono text-[11px] text-slate-500">Digital Enrollment Infrastructure</td>
+                <td class="py-4 px-4 text-slate-600">Process applications directly, connect with insurance networks.</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-4 font-bold text-brand-navy">Enterprise Level</td>
+                <td class="py-4 px-4 font-mono text-[11px] text-slate-500">Direct Carrier Infrastructure</td>
+                <td class="py-4 px-4 text-slate-600">Custom, custom integrations built for localized client portfolios.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 11: FINAL STRATEGY ================= -->
+      <div id="slide-11" class="absolute inset-0 w-full h-full bg-brand-navy text-white flex flex-col justify-center p-8 slide-enter">
+        <div class="absolute inset-0 watermark-pattern opacity-25 pointer-events-none"></div>
+        <div class="max-w-5xl w-full mx-auto text-center space-y-8">
+          <span class="text-brand-green text-xs font-bold tracking-[0.25em] uppercase font-heading">THE SECURE HEALTH APPROACH</span>
+          <h2 class="text-4xl md:text-6xl font-heading font-extrabold tracking-wide text-white">
+            Build the Trusted Consumer Experience First
+          </h2>
+          <div class="h-1 w-20 bg-brand-green mx-auto"></div>
+          
+          <div class="grid grid-cols-4 gap-4 max-w-3xl mx-auto text-center">
+            <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-xs font-bold tracking-widest text-brand-green">EDUCATION</div>
+            <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-xs font-bold tracking-widest text-brand-blue">GUIDANCE</div>
+            <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-xs font-bold tracking-widest text-brand-violet">TRANSPARENCY</div>
+            <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-xs font-bold tracking-widest text-white">CONFIDENCE</div>
+          </div>
+
+          <p class="text-white/60 text-sm max-w-xl mx-auto leading-relaxed mt-6">
+            <strong>Future-Ready Architecture:</strong> Secure Health will be designed with a scalable, API-ready architecture allowing future connections with insurance technology platforms as business needs evolve.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PRESENTATION DECK FOOTER NAVIGATION -->
+    <footer id="deck-footer" class="h-20 px-8 flex items-center justify-between border-t border-white/5 bg-brand-navy/60 backdrop-blur-md z-30 transition-all duration-300">
+      <div class="flex items-center gap-4">
+        <button onclick="prevSlide()" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 active:scale-95 transition text-white">
+          <i class="ti ti-chevron-left text-lg"></i>
+        </button>
+        <span class="text-xs font-mono text-white/50" id="slide-num">Slide 1 / 11</span>
+        <button onclick="nextSlide()" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 active:scale-95 transition text-white">
+          <i class="ti ti-chevron-right text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Slide Indicator Dots -->
+      <div class="hidden md:flex items-center gap-1.5" id="slide-dots">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="text-xs text-white/40 font-heading tracking-wider">
+        Built by Marcus Willis Design
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 11;
+    let presentMode = false;
+
+    // Show slide by index
+    function showSlide(index) {
+      if (index < 1) index = 1;
+      if (index > totalSlides) index = totalSlides;
+
+      // Deactivate all slides
+      for (let i = 1; i <= totalSlides; i++) {
+        const slide = document.getElementById(`slide-${i}`);
+        if (slide) {
+          slide.classList.remove('slide-active', 'z-20');
+          slide.classList.add('slide-enter');
+        }
+      }
+
+      // Activate target slide
+      const activeSlide = document.getElementById(`slide-${index}`);
+      if (activeSlide) {
+        activeSlide.classList.remove('slide-enter');
+        activeSlide.classList.add('slide-active', 'z-20');
+      }
+
+      currentSlide = index;
+      document.getElementById('slide-num').innerText = `Slide ${currentSlide} / ${totalSlides}`;
+
+      // Update dots active class
+      updateDots();
+    }
+
+    // Toggle Present Mode
+    function togglePresentMode() {
+      presentMode = !presentMode;
+      const header = document.getElementById('deck-header');
+      const footer = document.getElementById('deck-footer');
+      const btnText = document.getElementById('btn-present-text');
+
+      if (presentMode) {
+        header.classList.add('h-0', 'opacity-0', 'pointer-events-none');
+        footer.classList.add('h-0', 'opacity-0', 'pointer-events-none');
+        btnText.innerText = "Exit Present Mode";
+      } else {
+        header.classList.remove('h-0', 'opacity-0', 'pointer-events-none');
+        footer.classList.remove('h-0', 'opacity-0', 'pointer-events-none');
+        btnText.innerText = "Present Mode";
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        showSlide(currentSlide + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        showSlide(currentSlide - 1);
+      }
+    }
+
+    // Build footer slide dots
+    function buildDots() {
+      const dotsContainer = document.getElementById('slide-dots');
+      dotsContainer.innerHTML = '';
+      for (let i = 1; i <= totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = `w-2 h-2 rounded-full bg-white/20 hover:bg-white/40 transition`;
+        dot.onclick = () => showSlide(i);
+        dot.id = `dot-${i}`;
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    // Update dot colors
+    function updateDots() {
+      for (let i = 1; i <= totalSlides; i++) {
+        const dot = document.getElementById(`dot-${i}`);
+        if (dot) {
+          if (i === currentSlide) {
+            dot.className = `w-2 h-2 rounded-full bg-brand-green scale-125 transition`;
+          } else {
+            dot.className = `w-2 h-2 rounded-full bg-white/20 hover:bg-white/40 transition`;
+          }
+        }
+      }
+    }
+
+    // Keyboard support
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key.toLowerCase() === 'p') {
+        togglePresentMode();
+      }
+    });
+
+    // Fullscreen support
+    function toggleFullscreen() {
+      const icon = document.getElementById('fs-icon');
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().then(() => {
+          icon.className = "ti ti-minimize text-lg";
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+          icon.className = "ti ti-maximize text-lg";
+        }
+      }
+    }
+
+    // Init
+    buildDots();
+    showSlide(1);
+  </script>
+</body>
+</html>
