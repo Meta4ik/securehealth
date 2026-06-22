@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureHealth - Client Review Portal</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css');
+
+    :root {
+      --primary: 210 75% 37%;       /* Blue: #185FA5 */
+      --primary-hover: 210 75% 28%;
+      --primary-light: 210 80% 96%;
+      --accent: 135 60% 33%;       /* Green: #227c3e */
+      --neutral-dark: 215 45% 12%;  /* Deep slate: #111827 */
+      --neutral-light: 210 40% 98%; /* Warm white: #f8fafc */
+      --neutral-muted: 215 16% 47%; /* Muted slate gray */
+      --neutral-border: 214 32% 91%;/* Border gray: #e2e8f0 */
+      --white: 0 0% 100%;
+      
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 24px;
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px -4px rgba(7, 42, 94, 0.08), 0 2px 8px -2px rgba(7, 42, 94, 0.04);
+      --shadow-lg: 0 20px 40px -8px rgba(7, 42, 94, 0.12), 0 4px 12px -2px rgba(7, 42, 94, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+      color: hsl(var(--neutral-dark));
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    /* Container */
+    .portal-container {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: hsl(var(--primary-light));
+      color: hsl(var(--primary));
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(24, 95, 165, 0.1);
+    }
+
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 44px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      color: hsl(var(--neutral-dark));
+      line-height: 1.2;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: hsl(var(--neutral-muted));
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Grid Layout */
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    @media (max-width: 992px) {
+      .portal-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .portal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Portal Card */
+    .portal-card {
+      background: white;
+      border: 1px solid hsl(var(--neutral-border));
+      border-radius: var(--radius-lg);
+      padding: 35px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .portal-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: hsl(var(--primary));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .portal-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(24, 95, 165, 0.2);
+    }
+
+    .portal-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .portal-card.branding::before {
+      background: hsl(var(--accent));
+    }
+
+    .portal-card.strategy::before {
+      background: #6E5AEF;
+    }
+
+    .card-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: var(--radius-md);
+      background: hsl(var(--primary-light));
+      color: hsl(var(--primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+      transition: all 0.3s;
+    }
+
+    .portal-card.branding .card-icon {
+      background: rgba(34, 124, 62, 0.08);
+      color: hsl(var(--accent));
+    }
+
+    .portal-card.strategy .card-icon {
+      background: rgba(110, 90, 239, 0.08);
+      color: #6E5AEF;
+    }
+
+    .portal-card:hover .card-icon {
+      transform: scale(1.08) rotate(3deg);
+    }
+
+    .card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: hsl(var(--neutral-dark));
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: hsl(var(--neutral-muted));
+      margin-bottom: 30px;
+      flex-grow: 1;
+      line-height: 1.5;
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: hsl(var(--primary));
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .portal-card.branding .card-meta {
+      color: hsl(var(--accent));
+    }
+
+    .portal-card.strategy .card-meta {
+      color: #6E5AEF;
+    }
+
+    .card-meta i {
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+
+    .portal-card:hover .card-meta i {
+      transform: translateX(6px);
+    }
+
+    /* Specs & Resources Strip */
+    .specs-strip {
+      background: white;
+      border: 1px solid hsl(var(--neutral-border));
+      border-radius: var(--radius-lg);
+      padding: 30px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 768px) {
+      .specs-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .specs-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .specs-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .specs-desc {
+      font-size: 13px;
+      color: hsl(var(--neutral-muted));
+    }
+
+    .docs-list {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .doc-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: hsl(var(--neutral-light));
+      border: 1px solid hsl(var(--neutral-border));
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 600;
+      color: hsl(var(--neutral-dark));
+    }
+
+    .doc-item i {
+      color: #10b981;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: hsl(var(--neutral-muted));
+    }
+  </style>
+</head>
+<body>
+
+  <div class="portal-container">
+    <!-- Header -->
+    <header>
+      <div class="brand-badge"><i class="ti ti-activity"></i> Client Review Portal</div>
+      <h1>Secure<span>Health</span> Client Review Portal</h1>
+      <p class="subtitle">Welcome to the brand identity and interactive concept showcase. Explore the design files, enrollment strategy, and web prototypes below.</p>
+    </header>
+
+    <!-- Grid -->
+    <div class="portal-grid">
+      <!-- Card 1: Brand Guidelines -->
+      <a href="branding.html" class="portal-card branding">
+        <div>
+          <div class="card-icon"><i class="ti ti-palette"></i></div>
+          <div class="card-title">Brand Identity System</div>
+          <div class="card-desc">Review color palettes, typography scales, SVG logo variants (with grids and backdrop switchers), and reusable CSS components.</div>
+        </div>
+        <div class="card-meta">
+          Explore Branding Concepts <i class="ti ti-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- Card 2: Strategy Presentation -->
+      <a href="strategy.html" class="portal-card strategy">
+        <div>
+          <div class="card-icon"><i class="ti ti-presentation"></i></div>
+          <div class="card-title">Enrollment Tech Strategy</div>
+          <div class="card-desc">Browse the 11-slide landscape strategy proposal. Explains API connectivity, guided intake logic, roadmaps, and integration levels.</div>
+        </div>
+        <div class="card-meta">
+          View Strategy Deck <i class="ti ti-arrow-right"></i>
+        </div>
+      </a>
+
+      <!-- Card 3: Web Concept -->
+      <a href="web-concept.html" class="portal-card web-concept">
+        <div>
+          <div class="card-icon"><i class="ti ti-device-laptop"></i></div>
+          <div class="card-title">Interactive Web Concept</div>
+          <div class="card-desc">An education-led, situation-first landing page. Features a clean Zip-code intake, custom options selector, and responsive layouts.</div>
+        </div>
+        <div class="card-meta">
+          Launch Web Concept <i class="ti ti-arrow-right"></i>
+        </div>
+      </a>
+    </div>
+        <div class="specs-desc">Built in accordance with the project guidelines, outline documents, and business briefs:</div>
+      </div>
+      <div class="docs-list">
+        <div class="doc-item"><i class="ti ti-file-text"></i> Website Outline</div>
+        <div class="doc-item"><i class="ti ti-file-text"></i> Business Plan</div>
+        <div class="doc-item"><i class="ti ti-shield-check"></i> HIPAA Standards</div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2026 SecureHealth. All rights reserved. Built by Marcus Willis Design.
+    </footer>
+  </div>
+
+</body>
+</html>

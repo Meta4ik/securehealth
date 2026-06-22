@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureHealth - Brand Identity & Logo Concepts Presentation</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#071A52',
+              green: '#18B77A',
+              blue: '#009FE3',
+              violet: '#6E5AEF',
+              lightGray: '#F5F7FA',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Avenir', 'Helvetica Neue', 'sans-serif'],
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .slide-enter {
+      opacity: 0;
+      transform: scale(0.99) translateY(4px);
+    }
+    .slide-active {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .watermark-pattern {
+      background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 0), radial-gradient(rgba(255,255,255,0.1) 1px, transparent 0);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+    }
+    .watermark-pattern-dark {
+      background-image: radial-gradient(rgba(7,26,82,0.02) 1px, transparent 0), radial-gradient(rgba(7,26,82,0.02) 1px, transparent 0);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+    }
+    .logo-stage-grid {
+      background-size: 30px 30px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    }
+    .logo-stage-grid-dark {
+      background-size: 30px 30px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans overflow-hidden select-none">
+
+  <!-- SIDEBAR NAVIGATION MENU -->
+  <div id="sidebar-overlay" onclick="toggleSidebar(event)" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden transition-opacity duration-300 opacity-0"></div>
+  <aside id="sidebar-menu" class="fixed left-0 top-0 bottom-0 w-80 bg-brand-navy border-r border-white/10 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl">
+    <div class="h-16 px-6 border-b border-white/5 flex items-center justify-between flex-shrink-0">
+      <div class="font-heading font-bold text-xs tracking-widest text-brand-green">PRESENTATION INDEX</div>
+      <button onclick="toggleSidebar(event)" class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 text-white transition">
+        <i class="ti ti-x text-sm"></i>
+      </button>
+    </div>
+    
+    <div class="flex-grow overflow-y-auto p-4 space-y-4" id="sidebar-list">
+      <!-- Intro Section -->
+      <div>
+        <div class="text-[9px] font-bold text-white/30 tracking-[0.2em] uppercase px-3 mb-1">Introduction</div>
+        <div class="space-y-0.5">
+          <a href="#" id="sidebar-item-1" onclick="goToSlide(1, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">01. Title Cover</a>
+          <a href="#" id="sidebar-item-2" onclick="goToSlide(2, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">02. Brand Vision</a>
+          <a href="#" id="sidebar-item-3" onclick="goToSlide(3, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">03. Brand Attributes</a>
+          <a href="#" id="sidebar-item-4" onclick="goToSlide(4, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">04. Brand Colors</a>
+        </div>
+      </div>
+
+      <!-- Concept 1 -->
+      <div>
+        <div class="text-[9px] font-bold text-brand-blue/50 tracking-[0.2em] uppercase px-3 mb-1">Concept 01 · The Navigator</div>
+        <div class="space-y-0.5">
+          <a href="#" id="sidebar-item-5" onclick="goToSlide(5, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">05. Section Intro</a>
+          <a href="#" id="sidebar-item-6" onclick="goToSlide(6, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">06. Concept Details</a>
+          <a href="#" id="sidebar-item-7" onclick="goToSlide(7, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">07. Light Canvas (All versions)</a>
+          <a href="#" id="sidebar-item-8" onclick="goToSlide(8, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">08. Dark Canvas (All versions)</a>
+          <a href="#" id="sidebar-item-9" onclick="goToSlide(9, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">09. Navigator 1 Dedicated Page</a>
+          <a href="#" id="sidebar-item-10" onclick="goToSlide(10, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">10. Navigator 2 Dedicated Page</a>
+          <a href="#" id="sidebar-item-11" onclick="goToSlide(11, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">11. UI Applications</a>
+        </div>
+      </div>
+
+      <!-- Concept 2 -->
+      <div>
+        <div class="text-[9px] font-bold text-brand-violet/50 tracking-[0.2em] uppercase px-3 mb-1">Concept 02 · The Connection</div>
+        <div class="space-y-0.5">
+          <a href="#" id="sidebar-item-12" onclick="goToSlide(12, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">12. Section Intro</a>
+          <a href="#" id="sidebar-item-13" onclick="goToSlide(13, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">13. Concept Details</a>
+          <a href="#" id="sidebar-item-14" onclick="goToSlide(14, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">14. Light Canvas (All versions)</a>
+          <a href="#" id="sidebar-item-15" onclick="goToSlide(15, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">15. Dark Canvas (All versions)</a>
+          <a href="#" id="sidebar-item-16" onclick="goToSlide(16, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">16. Connection 1 Dedicated Page</a>
+          <a href="#" id="sidebar-item-17" onclick="goToSlide(17, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">17. Connection 2 Dedicated Page</a>
+          <a href="#" id="sidebar-item-18" onclick="goToSlide(18, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">18. UI Applications</a>
+        </div>
+      </div>
+
+      <!-- Concept 3 -->
+      <div>
+        <div class="text-[9px] font-bold text-brand-green/50 tracking-[0.2em] uppercase px-3 mb-1">Concept 03 · The Care Path</div>
+        <div class="space-y-0.5">
+          <a href="#" id="sidebar-item-19" onclick="goToSlide(19, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">19. Section Intro</a>
+          <a href="#" id="sidebar-item-20" onclick="goToSlide(20, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">20. Concept Details (Slideshow)</a>
+          <a href="#" id="sidebar-item-21" onclick="goToSlide(21, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">21. Light Canvas (Slideshow)</a>
+          <a href="#" id="sidebar-item-22" onclick="goToSlide(22, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">22. Dark Canvas (Slideshow)</a>
+          <a href="#" id="sidebar-item-23" onclick="goToSlide(23, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">23. Care Path 1 Dedicated Page</a>
+          <a href="#" id="sidebar-item-24" onclick="goToSlide(24, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">24. Care Path 2 Dedicated Page</a>
+          <a href="#" id="sidebar-item-25" onclick="goToSlide(25, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">25. Care Path 3 Dedicated Page</a>
+          <a href="#" id="sidebar-item-26" onclick="goToSlide(26, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">26. Care Path 4 Dedicated Page</a>
+          <a href="#" id="sidebar-item-27" onclick="goToSlide(27, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">27. Web Logo Dedicated Page</a>
+          <a href="#" id="sidebar-item-28" onclick="goToSlide(28, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">28. UI Applications</a>
+        </div>
+      </div>
+
+      <!-- Decision Matrix -->
+      <div>
+        <div class="text-[9px] font-bold text-white/30 tracking-[0.2em] uppercase px-3 mb-1">Evaluation</div>
+        <div class="space-y-0.5">
+          <a href="#" id="sidebar-item-29" onclick="goToSlide(29, event)" class="sidebar-item block px-3 py-1.5 text-xs font-medium rounded-lg text-white/70 hover:bg-white/5 hover:text-white transition">29. Decision Matrix</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN DECK WINDOW -->
+  <main class="relative w-screen h-screen flex flex-col justify-between bg-black">
+    
+    <!-- TOP BAR (Hidden in Present Mode) -->
+    <header id="deck-header" class="h-16 px-8 flex items-center justify-between z-30 border-b border-white/5 bg-brand-navy/60 backdrop-blur-md transition-all duration-300">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="w-8 h-8 rounded-lg bg-brand-navy border border-white/10 flex items-center justify-center text-white font-bold hover:bg-white/10 transition">
+          <i class="ti ti-arrow-left text-sm"></i>
+        </a>
+        <button onclick="toggleSidebar(event)" class="w-8 h-8 rounded-lg bg-brand-navy border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition" title="Open Index">
+          <i class="ti ti-menu-2 text-sm"></i>
+        </button>
+        <div class="text-xs tracking-[0.25em] font-bold text-white/50 uppercase font-heading">
+          SECURE HEALTH <span class="text-brand-green">//</span> BRAND IDENTITY PRESENTATION
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <button onclick="togglePresentMode()" class="text-xs font-bold tracking-wider uppercase border border-white/10 bg-white/5 hover:bg-white/10 px-4 py-2 rounded-lg flex items-center gap-2 transition">
+          <i class="ti ti-presentation"></i> <span id="btn-present-text">Present Mode</span>
+        </button>
+        <button onclick="toggleFullscreen()" class="text-white/60 hover:text-white transition p-2">
+          <i id="fs-icon" class="ti ti-maximize text-lg"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- SLIDES CONTAINER -->
+    <div class="relative flex-grow flex items-center justify-center overflow-hidden p-0 md:p-6">
+      
+      <!-- ================= SLIDE 01: COVER ================= -->
+      <div id="slide-1" class="absolute inset-0 w-full h-full bg-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="absolute inset-0 watermark-pattern opacity-20 pointer-events-none"></div>
+        
+        <div class="max-w-4xl w-full text-center flex flex-col items-center z-10">
+
+          <h1 class="text-5xl md:text-7xl font-heading font-extrabold tracking-wider mb-2">SECURE HEALTH</h1>
+          <div class="h-1 w-20 bg-brand-green mb-8"></div>
+          <p class="text-lg md:text-xl text-white/60 font-light max-w-xl mb-12 tracking-wide">
+            Logo Design Options &amp; Brand Identity Exploration
+          </p>
+          <div class="text-xs tracking-[0.3em] text-white/30 uppercase font-bold">
+            PREPARED BY MARCUS WILLIS DESIGN · 2026
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 02: BRAND VISION ================= -->
+      <div id="slide-2" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="absolute inset-0 watermark-pattern-dark opacity-10 pointer-events-none"></div>
+        <div class="max-w-5xl w-full px-6 md:px-12 text-center md:text-left">
+          <div class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase mb-6 font-heading">
+            BRAND VISION
+          </div>
+          <h2 class="text-4xl md:text-6xl font-heading font-extrabold leading-tight text-slate-900">
+            "Our goal is to create a visual identity that builds 
+            <span class="text-brand-green">trust</span>, simplifies 
+            <span class="text-brand-green">healthcare</span>, and 
+            <span class="text-brand-green">guides</span> people toward better health outcomes."
+          </h2>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 03: BRAND ATTRIBUTES ================= -->
+      <div id="slide-3" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex flex-col justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full mx-auto">
+          <div class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase mb-4 font-heading">
+            CORE ESSENCE
+          </div>
+          <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 mb-12">Brand Attributes</h2>
+          
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
+            
+            <!-- Trust -->
+            <div class="flex flex-col items-center gap-4">
+              <div class="w-28 h-28 rounded-full bg-brand-navy text-white flex items-center justify-center text-base font-bold font-heading shadow-lg">
+                Trust
+              </div>
+              <div class="text-[10px] text-brand-navy/60 font-bold uppercase tracking-wider">01. Security</div>
+            </div>
+
+            <!-- Image: Doctor -->
+            <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-brand-lightGray shadow-md">
+              <img src="images/advisor_avatar.png" alt="Doctor" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80'">
+            </div>
+
+            <!-- Security -->
+            <div class="flex flex-col items-center gap-4">
+              <div class="w-28 h-28 rounded-full bg-brand-navy text-white flex items-center justify-center text-base font-bold font-heading shadow-lg">
+                Security
+              </div>
+              <div class="text-[10px] text-brand-navy/60 font-bold uppercase tracking-wider">02. Protection</div>
+            </div>
+
+            <!-- Image: Family -->
+            <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-brand-lightGray shadow-md">
+              <img src="images/family_health.png" alt="Family" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=300&q=80'">
+            </div>
+
+            <!-- Care -->
+            <div class="flex flex-col items-center gap-4">
+              <div class="w-28 h-28 rounded-full bg-brand-navy text-white flex items-center justify-center text-base font-bold font-heading shadow-lg">
+                Care
+              </div>
+              <div class="text-[10px] text-brand-navy/60 font-bold uppercase tracking-wider">03. Support</div>
+            </div>
+
+            <!-- Image: Tech -->
+            <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-brand-lightGray shadow-md">
+              <img src="images/group_business.png" alt="Tech" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80'">
+            </div>
+
+            <!-- Guidance -->
+            <div class="flex flex-col items-center gap-4">
+              <div class="w-28 h-28 rounded-full bg-brand-navy text-white flex items-center justify-center text-base font-bold font-heading shadow-lg">
+                Guidance
+              </div>
+              <div class="text-[10px] text-brand-navy/60 font-bold uppercase tracking-wider">04. Navigation</div>
+            </div>
+
+            <!-- Image: Compass -->
+            <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-brand-lightGray shadow-md">
+              <img src="images/why_secure_health.png" alt="Compass" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&w=300&q=80'">
+            </div>
+
+            <!-- Support -->
+            <div class="flex flex-col items-center gap-4">
+              <div class="w-28 h-28 rounded-full bg-brand-navy text-white flex items-center justify-center text-base font-bold font-heading shadow-lg">
+                Support
+              </div>
+              <div class="text-[10px] text-brand-navy/60 font-bold uppercase tracking-wider">05. Connection</div>
+            </div>
+
+            <!-- Image: Support -->
+            <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-brand-lightGray shadow-md">
+              <img src="images/not_sure.png" alt="Support" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=300&q=80'">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 04: BRAND COLORS ================= -->
+      <div id="slide-4" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex flex-col justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full mx-auto">
+          <div class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase mb-4 font-heading">
+            DESIGN TOKENS
+          </div>
+          <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 mb-10">Brand Colors</h2>
+          
+          <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+            <!-- Navy -->
+            <div class="bg-brand-lightGray rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+              <div class="h-32 bg-brand-navy"></div>
+              <div class="p-5">
+                <div class="font-heading font-bold text-slate-800">Secure Navy</div>
+                <div class="text-xs text-slate-500 font-mono mt-1">#071A52</div>
+                <div class="text-xs text-slate-400 mt-3">Trust · Stability · Security</div>
+              </div>
+            </div>
+            <!-- Green -->
+            <div class="bg-brand-lightGray border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+              <div class="h-32 bg-brand-green"></div>
+              <div class="p-5">
+                <div class="font-bold text-slate-800">Trust Green</div>
+                <div class="text-[11px] text-slate-500 font-mono mt-1">HEX: #18B77A</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Signifies wellness, positive growth, and stability.</div>
+              </div>
+            </div>
+            <!-- Blue -->
+            <div class="bg-brand-lightGray border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+              <div class="h-32 bg-brand-blue"></div>
+              <div class="p-5">
+                <div class="font-bold text-slate-800">Digital Blue</div>
+                <div class="text-[11px] text-slate-500 font-mono mt-1">HEX: #009FE3</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Tech-forward accent representing accessibility.</div>
+              </div>
+            </div>
+            <!-- Violet -->
+            <div class="bg-brand-lightGray border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
+              <div class="h-32 bg-brand-violet"></div>
+              <div class="p-5">
+                <div class="font-bold text-slate-800">Soft Violet</div>
+                <div class="text-[11px] text-slate-500 font-mono mt-1">HEX: #6E5AEF</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Modern, warm violet accent for guidance and focus.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 05: CONCEPT 01 SECTION ================= -->
+      <div id="slide-5" class="absolute inset-0 w-full h-full bg-brand-blue flex items-center justify-center p-8 slide-enter">
+        <div class="absolute inset-0 watermark-pattern opacity-20 pointer-events-none"></div>
+        <div class="max-w-4xl w-full text-center flex flex-col items-center z-10">
+          <span class="text-xs font-bold tracking-[0.25em] text-white uppercase mb-6 font-heading">VISUAL PATH 01</span>
+          <h2 class="text-5xl md:text-7xl font-heading font-extrabold tracking-wide mb-4">THE NAVIGATOR</h2>
+          <div class="h-1 w-24 bg-white mb-6"></div>
+          <p class="text-lg md:text-xl text-white/90 font-light">Concept Direction: Shield &amp; Compass</p>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 06: CONCEPT 01 DETAILS ================= -->
+      <div id="slide-6" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <div class="text-xs font-bold tracking-[0.2em] text-brand-blue uppercase font-heading">CONCEPT 01 DETAILS</div>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 font-bold">The Navigator</h2>
+            <p class="text-slate-600 text-lg leading-relaxed">
+              Combining the strength of a shield with the clarity of a compass. This concept represents security, trusted guidance, and helping members navigate their healthcare journey.
+            </p>
+            <div class="h-px bg-slate-200"></div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-blue text-lg"></i> Security
+              </div>
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-blue text-lg"></i> Direction
+              </div>
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-blue text-lg"></i> Trust
+              </div>
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-blue text-lg"></i> Clarity
+              </div>
+            </div>
+          </div>
+          <!-- Small Showcase -->
+          <div class="grid grid-cols-1 gap-4 h-96 bg-brand-lightGray border border-slate-200 rounded-3xl p-6 shadow-inner overflow-y-auto">
+            <div class="flex flex-col items-center justify-center bg-white rounded-2xl border border-slate-100 p-4 shadow-sm">
+              <img src="../logos/navigator1.svg" alt="Concept 1 Version 1.1" class="h-28 w-auto object-contain mb-2">
+              <span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Version 1.1 (Solid)</span>
+            </div>
+            <div class="flex flex-col items-center justify-center bg-white rounded-2xl border border-slate-100 p-4 shadow-sm">
+              <img src="../logos/navigator2.svg" alt="Concept 1 Version 1.2" class="h-28 w-auto object-contain mb-2">
+              <span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Version 1.2 (Outline)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 07: CONCEPT 01 - ALL VERSIONS (LIGHT CANVAS) ================= -->
+      <div id="slide-7" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex flex-col justify-center items-center p-8 slide-enter">
+        <div class="absolute top-8 left-8 text-xs text-brand-navy/40 tracking-widest uppercase font-bold font-heading">Concept 01 · All Versions (Light Canvas)</div>
+        <div class="flex-grow w-full max-w-4xl flex flex-col justify-around logo-stage-grid rounded-3xl border border-slate-200 p-12 my-8 shadow-inner bg-slate-50 overflow-hidden">
+          <div class="flex-1 flex flex-col items-center justify-center border-b border-slate-100 py-6">
+            <img src="../logos/navigator1.svg" alt="Navigator 1 Light" class="h-[20vh] w-auto max-w-full object-contain">
+            <span class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mt-4">Version 1.1 (Solid)</span>
+          </div>
+          <div class="flex-1 flex flex-col items-center justify-center py-6">
+            <img src="../logos/navigator2.svg" alt="Navigator 2 Light" class="h-[20vh] w-auto max-w-full object-contain">
+            <span class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mt-4">Version 1.2 (Outline)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 08: CONCEPT 01 - ALL VERSIONS (DARK CANVAS) ================= -->
+      <div id="slide-8" class="absolute inset-0 w-full h-full bg-brand-navy text-white flex flex-col justify-center items-center p-8 slide-enter">
+        <div class="absolute top-8 left-8 text-xs text-white/40 tracking-widest uppercase font-bold font-heading">Concept 01 · All Versions (Dark Canvas)</div>
+        <div class="flex-grow w-full max-w-4xl flex flex-col justify-around logo-stage-grid-dark rounded-3xl border border-white/5 p-12 my-8 shadow-2xl bg-black/20 overflow-hidden">
+          <div class="flex-1 flex flex-col items-center justify-center border-b border-white/5 py-6">
+            <img src="../logos/navigator1.svg" alt="Navigator 1 Dark" class="h-[20vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+            <span class="text-[10px] font-bold text-white/40 tracking-widest uppercase mt-4">Version 1.1 (Solid)</span>
+          </div>
+          <div class="flex-1 flex flex-col items-center justify-center py-6">
+            <img src="../logos/navigator2.svg" alt="Navigator 2 Dark" class="h-[20vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+            <span class="text-[10px] font-bold text-white/40 tracking-widest uppercase mt-4">Version 1.2 (Outline)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 09: NAVIGATOR 1 DEDICATED PAGE ================= -->
+      <div id="slide-9" class="absolute inset-0 w-full h-full flex flex-col slide-enter">
+        <!-- Light canvas half (top) -->
+        <div class="flex-1 bg-white text-brand-navy relative flex flex-col justify-center items-center p-12 border-b border-brand-navy/10 logo-stage-grid">
+          <div class="absolute top-4 left-6 text-[10px] text-brand-navy/50 tracking-widest uppercase font-bold font-heading">Navigator Version 1.1 Solid (Light Canvas)</div>
+          <img src="../logos/navigator1.svg" alt="Navigator 1 Light" class="h-[22vh] w-auto max-w-full object-contain">
+        </div>
+        <!-- Dark canvas half (bottom) -->
+        <div class="flex-1 bg-brand-navy text-white relative flex flex-col justify-center items-center p-12 logo-stage-grid-dark">
+          <div class="absolute top-4 left-6 text-[10px] text-white/40 tracking-widest uppercase font-bold font-heading">Navigator Version 1.1 Solid (Dark Canvas)</div>
+          <img src="../logos/navigator1.svg" alt="Navigator 1 Dark" class="h-[22vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 10: NAVIGATOR 2 DEDICATED PAGE ================= -->
+      <div id="slide-10" class="absolute inset-0 w-full h-full flex flex-col slide-enter">
+        <!-- Light canvas half (top) -->
+        <div class="flex-1 bg-white text-brand-navy relative flex flex-col justify-center items-center p-12 border-b border-brand-navy/10 logo-stage-grid">
+          <div class="absolute top-4 left-6 text-[10px] text-brand-navy/50 tracking-widest uppercase font-bold font-heading">Navigator Version 1.2 Outline (Light Canvas)</div>
+          <img src="../logos/navigator2.svg" alt="Navigator 2 Light" class="h-[22vh] w-auto max-w-full object-contain">
+        </div>
+        <!-- Dark canvas half (bottom) -->
+        <div class="flex-1 bg-brand-navy text-white relative flex flex-col justify-center items-center p-12 logo-stage-grid-dark">
+          <div class="absolute top-4 left-6 text-[10px] text-white/40 tracking-widest uppercase font-bold font-heading">Navigator Version 1.2 Outline (Dark Canvas)</div>
+          <img src="../logos/navigator2.svg" alt="Navigator 2 Dark" class="h-[22vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 11: CONCEPT 01 APPLICATIONS ================= -->
+      <div id="slide-11" class="absolute inset-0 w-full h-full bg-brand-lightGray text-brand-navy flex flex-col justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full mx-auto">
+          <div class="flex justify-between items-end mb-8">
+            <div>
+              <div class="text-xs font-bold tracking-[0.2em] text-brand-blue uppercase mb-2 font-heading">CONCEPT 01 APPLICATIONS</div>
+              <h2 class="text-3xl font-heading font-extrabold text-slate-900">Brand in Context</h2>
+            </div>
+            <div class="text-lg font-heading italic font-semibold text-brand-blue font-bold">"Guiding you to better health."</div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Member Card -->
+            <div class="bg-gradient-to-tr from-brand-navy to-slate-900 text-white rounded-2xl p-6 shadow-xl relative overflow-hidden aspect-[1.586/1] flex flex-col justify-between">
+              <div class="absolute inset-0 watermark-pattern opacity-5 pointer-events-none"></div>
+              <div class="flex justify-between items-start">
+                <div class="flex items-center gap-2">
+                  <img src="../logos/navigator2.svg" alt="Concept 1 logo icon" class="h-8 w-auto object-contain" style="filter: brightness(0) invert(1);">
+                  <span class="text-xs font-heading font-extrabold tracking-wider">SECURE HEALTH</span>
+                </div>
+                <div class="text-[8px] bg-brand-blue/30 px-2 py-0.5 rounded font-mono font-bold tracking-widest text-brand-blue">PLATINUM MEMBER</div>
+              </div>
+              <div>
+                <div class="text-sm font-semibold tracking-wider font-heading">Marcus Willis</div>
+                <div class="text-[9px] text-white/60 font-mono mt-1">Member ID: SH-827-3910</div>
+              </div>
+            </div>
+            <!-- Mobile App -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between aspect-[1.586/1]">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div class="flex items-center gap-2">
+                  <img src="../logos/navigator1.svg" alt="Concept 1 logo" class="h-6 w-auto object-contain">
+                  <span class="text-xs font-heading font-bold text-brand-navy">SecureHealth</span>
+                </div>
+                <i class="ti ti-bell text-slate-400 text-sm"></i>
+              </div>
+              <div class="my-3">
+                <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Welcome Back</div>
+                <div class="text-sm font-heading font-extrabold text-slate-800">Your Health Navigation Guide</div>
+              </div>
+              <div class="bg-brand-lightGray rounded-xl p-2 flex items-center justify-between border border-slate-200">
+                <span class="text-[10px] text-slate-600 font-semibold">Start Plan Assessment</span>
+                <i class="ti ti-chevron-right text-brand-blue text-xs"></i>
+              </div>
+            </div>
+            <!-- Website Header -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between aspect-[1.586/1]">
+              <div class="w-full flex items-center justify-between bg-brand-navy text-white p-3 rounded-xl">
+                <div class="flex items-center gap-2">
+                  <img src="../logos/navigator1.svg" alt="Concept 1 Logo" class="h-5 w-auto object-contain" style="filter: brightness(0) invert(1);">
+                  <span class="text-[8px] font-heading font-bold tracking-wider">SECURE HEALTH</span>
+                </div>
+                <div class="flex gap-2 text-[6px] text-white/60">
+                  <span>Home</span>
+                  <span>Medicare</span>
+                  <span>Employer Plans</span>
+                </div>
+              </div>
+              <div class="text-center py-2">
+                <h4 class="text-[11px] font-bold text-slate-800">How would you like to build your plan?</h4>
+                <p class="text-[8px] text-slate-400 mt-1">Get educated, match coverage, self-enroll.</p>
+              </div>
+              <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full w-2/3 bg-brand-blue rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 12: CONCEPT 02 SECTION ================= -->
+      <div id="slide-12" class="absolute inset-0 w-full h-full bg-brand-blue flex items-center justify-center p-8 slide-enter">
+        <div class="absolute inset-0 watermark-pattern opacity-20 pointer-events-none"></div>
+        <div class="max-w-4xl w-full text-center flex flex-col items-center z-10">
+          <div class="text-xs font-bold tracking-[0.25em] text-white uppercase mb-6 font-heading">
+            VISUAL PATH 02
+          </div>
+          <h2 class="text-5xl md:text-7xl font-heading font-extrabold tracking-wide mb-4">THE CONNECTION</h2>
+          <div class="h-1 w-24 bg-white mb-6"></div>
+          <p class="text-lg md:text-xl text-white/90 font-light">
+            Concept Direction: Shield &amp; Communication
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 13: CONCEPT 02 DETAILS ================= -->
+      <div id="slide-13" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <div class="text-xs font-bold tracking-[0.2em] text-brand-violet uppercase font-heading font-bold">CONCEPT 02 DETAILS</div>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 font-bold">The Connection</h2>
+            <p class="text-slate-600 text-lg leading-relaxed">
+              A shield combined with communication represents Secure Health as the connection between members, providers, information, and healthcare solutions.
+            </p>
+            <div class="h-px bg-slate-200"></div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-violet text-lg"></i> Support
+              </div>
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-violet text-lg"></i> Protection
+              </div>
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-violet text-lg"></i> Accessible
+              </div>
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-violet text-lg"></i> Human
+              </div>
+            </div>
+          </div>
+          <!-- Small Showcase -->
+          <div class="grid grid-cols-1 gap-4 h-96 bg-brand-lightGray border border-slate-200 rounded-3xl p-6 shadow-inner overflow-y-auto">
+            <div class="flex flex-col items-center justify-center bg-white rounded-2xl border border-slate-100 p-4 shadow-sm">
+              <img src="../logos/connection1.svg" alt="Concept 2 Version 2.1" class="h-28 w-auto object-contain mb-2">
+              <span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Version 2.1 (Bold)</span>
+            </div>
+            <div class="flex flex-col items-center justify-center bg-white rounded-2xl border border-slate-100 p-4 shadow-sm">
+              <img src="../logos/connection2.svg" alt="Concept 2 Version 2.2" class="h-28 w-auto object-contain mb-2">
+              <span class="text-[10px] font-bold text-slate-400 tracking-wider uppercase">Version 2.2 (Refined)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 14: CONCEPT 02 - ALL VERSIONS (LIGHT CANVAS) ================= -->
+      <div id="slide-14" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex flex-col justify-center items-center p-8 slide-enter">
+        <div class="absolute top-8 left-8 text-xs text-brand-navy/40 tracking-widest uppercase font-bold font-heading">Concept 02 · All Versions (Light Canvas)</div>
+        <div class="flex-grow w-full max-w-4xl flex flex-col justify-around logo-stage-grid rounded-3xl border border-slate-200 p-12 my-8 shadow-inner bg-slate-50 overflow-hidden">
+          <div class="flex-1 flex flex-col items-center justify-center border-b border-slate-100 py-6">
+            <img src="../logos/connection1.svg" alt="Connection 1 Light" class="h-[20vh] w-auto max-w-full object-contain">
+            <span class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mt-4">Version 2.1 (Bold)</span>
+          </div>
+          <div class="flex-1 flex flex-col items-center justify-center py-6">
+            <img src="../logos/connection2.svg" alt="Connection 2 Light" class="h-[20vh] w-auto max-w-full object-contain">
+            <span class="text-[10px] font-bold text-slate-400 tracking-widest uppercase mt-4">Version 2.2 (Refined)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 15: CONCEPT 02 - ALL VERSIONS (DARK CANVAS) ================= -->
+      <div id="slide-15" class="absolute inset-0 w-full h-full bg-brand-navy text-white flex flex-col justify-center items-center p-8 slide-enter">
+        <div class="absolute top-8 left-8 text-xs text-white/40 tracking-widest uppercase font-bold font-heading">Concept 02 · All Versions (Dark Canvas)</div>
+        <div class="flex-grow w-full max-w-4xl flex flex-col justify-around logo-stage-grid-dark rounded-3xl border border-white/5 p-12 my-8 shadow-2xl bg-black/20 overflow-hidden">
+          <div class="flex-1 flex flex-col items-center justify-center border-b border-white/5 py-6">
+            <img src="../logos/connection1.svg" alt="Connection 1 Dark" class="h-[20vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+            <span class="text-[10px] font-bold text-white/40 tracking-widest uppercase mt-4">Version 2.1 (Bold)</span>
+          </div>
+          <div class="flex-1 flex flex-col items-center justify-center py-6">
+            <img src="../logos/connection2.svg" alt="Connection 2 Dark" class="h-[20vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+            <span class="text-[10px] font-bold text-white/40 tracking-widest uppercase mt-4">Version 2.2 (Refined)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 16: CONNECTION 1 DEDICATED PAGE ================= -->
+      <div id="slide-16" class="absolute inset-0 w-full h-full flex flex-col slide-enter">
+        <!-- Light canvas half (top) -->
+        <div class="flex-1 bg-white text-brand-navy relative flex flex-col justify-center items-center p-12 border-b border-brand-navy/10 logo-stage-grid">
+          <div class="absolute top-4 left-6 text-[10px] text-brand-navy/50 tracking-widest uppercase font-bold font-heading">Connection Version 2.1 Bold (Light Canvas)</div>
+          <img src="../logos/connection1.svg" alt="Connection 1 Light" class="h-[22vh] w-auto max-w-full object-contain">
+        </div>
+        <!-- Dark canvas half (bottom) -->
+        <div class="flex-1 bg-brand-navy text-white relative flex flex-col justify-center items-center p-12 logo-stage-grid-dark">
+          <div class="absolute top-4 left-6 text-[10px] text-white/40 tracking-widest uppercase font-bold font-heading">Connection Version 2.1 Bold (Dark Canvas)</div>
+          <img src="../logos/connection1.svg" alt="Connection 1 Dark" class="h-[22vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 17: CONNECTION 2 DEDICATED PAGE ================= -->
+      <div id="slide-17" class="absolute inset-0 w-full h-full flex flex-col slide-enter">
+        <!-- Light canvas half (top) -->
+        <div class="flex-1 bg-white text-brand-navy relative flex flex-col justify-center items-center p-12 border-b border-brand-navy/10 logo-stage-grid">
+          <div class="absolute top-4 left-6 text-[10px] text-brand-navy/50 tracking-widest uppercase font-bold font-heading">Connection Version 2.2 Refined (Light Canvas)</div>
+          <img src="../logos/connection2.svg" alt="Connection 2 Light" class="h-[22vh] w-auto max-w-full object-contain">
+        </div>
+        <!-- Dark canvas half (bottom) -->
+        <div class="flex-1 bg-brand-navy text-white relative flex flex-col justify-center items-center p-12 logo-stage-grid-dark">
+          <div class="absolute top-4 left-6 text-[10px] text-white/40 tracking-widest uppercase font-bold font-heading">Connection Version 2.2 Refined (Dark Canvas)</div>
+          <img src="../logos/connection2.svg" alt="Connection 2 Dark" class="h-[22vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 18: CONCEPT 02 APPLICATIONS ================= -->
+      <div id="slide-18" class="absolute inset-0 w-full h-full bg-brand-lightGray text-brand-navy flex flex-col justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full mx-auto">
+          <div class="flex justify-between items-end mb-8">
+            <div>
+              <div class="text-xs font-bold tracking-[0.2em] text-brand-violet uppercase mb-2 font-heading">CONCEPT 02 APPLICATIONS</div>
+              <h2 class="text-3xl font-heading font-extrabold text-slate-900">Brand in Context</h2>
+            </div>
+            <div class="text-lg font-heading italic font-semibold text-brand-violet font-bold">"Connected support when you need it."</div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Support Dashboard -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between aspect-[1.586/1]">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 rounded-full bg-brand-green"></div>
+                  <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">ADVISOR DIALOG</span>
+                </div>
+                <span class="text-[9px] bg-brand-violet/10 text-brand-violet px-2 py-0.5 rounded font-bold">LIVE CONNECTION</span>
+              </div>
+              <div class="my-2 bg-brand-lightGray rounded-xl p-3 border border-slate-200/60">
+                <div class="text-[9px] text-slate-400 font-bold">SecureHealth Chatbot</div>
+                <div class="text-[11px] text-slate-700 mt-1 font-medium">Hello! Your intake questionnaire shows you qualify for Medicare. Would you like to review Rockwall County doctor networks now?</div>
+              </div>
+              <div class="flex gap-2">
+                <button class="bg-brand-violet text-white text-[9px] font-bold px-3 py-1.5 rounded-lg">Yes, show plans</button>
+              </div>
+            </div>
+            <!-- Patient Portal -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between aspect-[1.586/1]">
+              <div class="flex justify-between items-start">
+                <div class="flex items-center gap-2">
+                  <img src="../logos/connection2.svg" alt="Concept 2 Logo" class="h-6 w-auto object-contain">
+                  <div>
+                    <div class="text-[9px] font-heading font-extrabold text-brand-navy">SECURE HEALTH</div>
+                    <div class="text-[7px] text-slate-400">PATIENT HUB</div>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-1">
+                <div class="text-[8px] text-slate-400 font-bold">VERIFIED BENEFITS</div>
+                <div class="text-xs font-bold text-slate-800 flex items-center justify-between">
+                  <span>Network Compliance</span>
+                  <span class="text-brand-green font-bold"><i class="ti ti-shield-check"></i> 100% OK</span>
+                </div>
+              </div>
+              <div class="w-full bg-slate-100 h-1 rounded-full overflow-hidden">
+                <div class="h-full bg-brand-green w-full"></div>
+              </div>
+            </div>
+            <!-- Health App Screen -->
+            <div class="bg-gradient-to-tr from-brand-navy to-slate-900 text-white rounded-3xl p-6 shadow-xl relative overflow-hidden aspect-[1.586/1] flex flex-col justify-between">
+              <div class="absolute inset-0 watermark-pattern opacity-5 pointer-events-none"></div>
+              <div class="flex justify-between items-start">
+                <div class="text-[10px] font-bold text-white/50 uppercase tracking-widest font-heading">Secure Communication</div>
+                <i class="ti ti-lock text-brand-green text-sm"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-heading font-extrabold text-white">SecureHealth Telehealth</h4>
+                <p class="text-[9px] text-white/60 mt-1">End-to-end encrypted consultations with licensed health experts.</p>
+              </div>
+              <div class="text-[9px] text-brand-green font-semibold">Active Session Secured</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 19: CONCEPT 03 SECTION ================= -->
+      <div id="slide-19" class="absolute inset-0 w-full h-full bg-brand-green flex items-center justify-center p-8 slide-enter">
+        <div class="absolute inset-0 watermark-pattern opacity-25 pointer-events-none"></div>
+        <div class="max-w-4xl w-full text-center flex flex-col items-center z-10">
+          <div class="text-xs font-bold tracking-[0.25em] text-white uppercase mb-6 font-heading">
+            VISUAL PATH 03
+          </div>
+          <h2 class="text-5xl md:text-7xl font-heading font-extrabold tracking-wide mb-4">THE CARE PATH</h2>
+          <div class="h-1 w-24 bg-white mb-6"></div>
+          <p class="text-lg md:text-xl text-white/95 font-light">
+            Concept Direction: People · Heart · Direction
+          </p>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 20: CONCEPT 03 DETAILS ================= -->
+      <div id="slide-20" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex items-center justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <div class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase font-heading font-bold">CONCEPT 03 DETAILS</div>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-slate-900 font-bold">The Care Path</h2>
+            <p class="text-slate-600 text-lg leading-relaxed">
+              A people-first identity combining health, human connection, and forward movement. This direction focuses on compassion, wellness, and creating a healthier future.
+            </p>
+            <div class="h-px bg-slate-200"></div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-green text-lg"></i> Compassion
+              </div>
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-green text-lg"></i> Wellness
+              </div>
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-green text-lg"></i> Preventive
+              </div>
+              <div class="flex items-center gap-2 text-slate-700 font-medium">
+                <i class="ti ti-circle-check text-brand-green text-lg"></i> Progress
+              </div>
+            </div>
+          </div>
+          <!-- Interactive Showcase Slideshow -->
+          <div class="relative flex items-center justify-center h-96 bg-brand-lightGray border border-slate-200 rounded-3xl p-6 shadow-inner overflow-hidden">
+            <!-- Prev button -->
+            <button onclick="prevCarePathDetail(event)" class="absolute left-2 w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-200 flex items-center justify-center text-brand-navy shadow-md z-30 transition">
+              <i class="ti ti-chevron-left text-lg"></i>
+            </button>
+            
+            <!-- Slides -->
+            <div id="cp-detail-1" class="cp-detail-slide flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath1.svg" alt="Care Path 1" class="h-[20vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-4">Version 3.1</span>
+            </div>
+            <div id="cp-detail-2" class="cp-detail-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath2.svg" alt="Care Path 2" class="h-[20vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-4">Version 3.2</span>
+            </div>
+            <div id="cp-detail-3" class="cp-detail-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath3.svg" alt="Care Path 3" class="h-[20vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-4">Version 3.3</span>
+            </div>
+            <div id="cp-detail-4" class="cp-detail-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath4.svg" alt="Care Path 4" class="h-[20vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-4">Version 3.4</span>
+            </div>
+            <div id="cp-detail-5" class="cp-detail-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath_web_logo.svg" alt="Care Path Web" class="h-[18vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-4">CarePath Web Logo</span>
+            </div>
+
+            <!-- Next button -->
+            <button onclick="nextCarePathDetail(event)" class="absolute right-2 w-10 h-10 rounded-full bg-white hover:bg-slate-100 border border-slate-200 flex items-center justify-center text-brand-navy shadow-md z-30 transition">
+              <i class="ti ti-chevron-right text-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 21: CONCEPT 03 - ALL VERSIONS (LIGHT CANVAS) ================= -->
+      <div id="slide-21" class="absolute inset-0 w-full h-full bg-white text-brand-navy flex flex-col justify-center items-center p-8 slide-enter">
+        <div class="absolute top-8 left-8 text-xs text-brand-green tracking-widest uppercase font-bold font-heading">Concept 03 · All Versions (Light Canvas)</div>
+        <div class="relative w-full max-w-4xl h-[65vh] flex items-center justify-center my-8">
+          <!-- Prev button -->
+          <button onclick="prevCarePathLight(event)" class="absolute left-4 w-12 h-12 rounded-full bg-white hover:bg-slate-100 border border-slate-200 flex items-center justify-center text-brand-navy shadow-lg z-30 transition">
+            <i class="ti ti-chevron-left text-xl"></i>
+          </button>
+          
+          <!-- Showcase Stage -->
+          <div class="flex flex-col items-center justify-center w-full h-full p-12 logo-stage-grid rounded-3xl border border-slate-200 bg-slate-50 relative overflow-hidden">
+            <!-- Slide 1 -->
+            <div id="cp-light-1" class="cp-light-slide flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath1.svg" alt="Care Path 1" class="h-[40vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-6">Version 3.1</span>
+            </div>
+            <!-- Slide 2 -->
+            <div id="cp-light-2" class="cp-light-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath2.svg" alt="Care Path 2" class="h-[40vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-6">Version 3.2</span>
+            </div>
+            <!-- Slide 3 -->
+            <div id="cp-light-3" class="cp-light-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath3.svg" alt="Care Path 3" class="h-[40vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-6">Version 3.3</span>
+            </div>
+            <!-- Slide 4 -->
+            <div id="cp-light-4" class="cp-light-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath4.svg" alt="Care Path 4" class="h-[40vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-6">Version 3.4</span>
+            </div>
+            <!-- Slide 5 -->
+            <div id="cp-light-5" class="cp-light-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath_web_logo.svg" alt="Care Path Web" class="h-[35vh] w-auto max-w-[80%] object-contain">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-6">CarePath Web Logo</span>
+            </div>
+          </div>
+
+          <!-- Next button -->
+          <button onclick="nextCarePathLight(event)" class="absolute right-4 w-12 h-12 rounded-full bg-white hover:bg-slate-100 border border-slate-200 flex items-center justify-center text-brand-navy shadow-lg z-30 transition">
+            <i class="ti ti-chevron-right text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 22: CONCEPT 03 - ALL VERSIONS (DARK CANVAS) ================= -->
+      <div id="slide-22" class="absolute inset-0 w-full h-full bg-brand-navy text-white flex flex-col justify-center items-center p-8 slide-enter">
+        <div class="absolute top-8 left-8 text-xs text-white/40 tracking-widest uppercase font-bold font-heading">Concept 03 · All Versions (Dark Canvas)</div>
+        <div class="relative w-full max-w-4xl h-[65vh] flex items-center justify-center my-8">
+          <!-- Prev button -->
+          <button onclick="prevCarePathDark(event)" class="absolute left-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center text-white shadow-lg z-30 transition">
+            <i class="ti ti-chevron-left text-xl"></i>
+          </button>
+          
+          <!-- Showcase Stage -->
+          <div class="flex flex-col items-center justify-center w-full h-full p-12 logo-stage-grid-dark rounded-3xl border border-white/5 bg-black/20 relative overflow-hidden">
+            <!-- Slide 1 -->
+            <div id="cp-dark-1" class="cp-dark-slide flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath1.svg" alt="Care Path 1" class="h-[40vh] w-auto max-w-[80%] object-contain" style="filter: brightness(0) invert(1);">
+              <span class="text-xs font-bold text-white/40 uppercase tracking-widest mt-6">Version 3.1</span>
+            </div>
+            <!-- Slide 2 -->
+            <div id="cp-dark-2" class="cp-dark-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath2.svg" alt="Care Path 2" class="h-[40vh] w-auto max-w-[80%] object-contain" style="filter: brightness(0) invert(1);">
+              <span class="text-xs font-bold text-white/40 uppercase tracking-widest mt-6">Version 3.2</span>
+            </div>
+            <!-- Slide 3 -->
+            <div id="cp-dark-3" class="cp-dark-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath3.svg" alt="Care Path 3" class="h-[40vh] w-auto max-w-[80%] object-contain" style="filter: brightness(0) invert(1);">
+              <span class="text-[9px] font-bold text-white/40 tracking-widest uppercase mt-6">Version 3.3</span>
+            </div>
+            <!-- Slide 4 -->
+            <div id="cp-dark-4" class="cp-dark-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath4.svg" alt="Care Path 4" class="h-[40vh] w-auto max-w-[80%] object-contain" style="filter: brightness(0) invert(1);">
+              <span class="text-xs font-bold text-white/40 uppercase tracking-widest mt-6">Version 3.4</span>
+            </div>
+            <!-- Slide 5 -->
+            <div id="cp-dark-5" class="cp-dark-slide hidden flex flex-col items-center justify-center w-full h-full">
+              <img src="../logos/carepath_web_logo.svg" alt="Care Path Web" class="h-[35vh] w-auto max-w-[80%] object-contain" style="filter: brightness(0) invert(1);">
+              <span class="text-xs font-bold text-white/40 uppercase tracking-widest mt-6">CarePath Web Logo</span>
+            </div>
+          </div>
+
+          <!-- Next button -->
+          <button onclick="nextCarePathDark(event)" class="absolute right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center text-white shadow-lg z-30 transition">
+            <i class="ti ti-chevron-right text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 23: CARE PATH 1 DEDICATED PAGE ================= -->
+      <div id="slide-23" class="absolute inset-0 w-full h-full flex flex-col slide-enter">
+        <!-- Light canvas half (top) -->
+        <div class="flex-1 bg-white text-brand-navy relative flex flex-col justify-center items-center p-12 border-b border-brand-navy/10 logo-stage-grid">
+          <div class="absolute top-4 left-6 text-[10px] text-brand-navy/50 tracking-widest uppercase font-bold font-heading">Care Path Version 3.1 (Light Canvas)</div>
+          <img src="../logos/carepath1.svg" alt="Care Path 1 Light" class="h-[22vh] w-auto max-w-full object-contain">
+        </div>
+        <!-- Dark canvas half (bottom) -->
+        <div class="flex-1 bg-brand-navy text-white relative flex flex-col justify-center items-center p-12 logo-stage-grid-dark">
+          <div class="absolute top-4 left-6 text-[10px] text-white/40 tracking-widest uppercase font-bold font-heading">Care Path Version 3.1 (Dark Canvas)</div>
+          <img src="../logos/carepath1.svg" alt="Care Path 1 Dark" class="h-[22vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 24: CARE PATH 2 DEDICATED PAGE ================= -->
+      <div id="slide-24" class="absolute inset-0 w-full h-full flex flex-col slide-enter">
+        <!-- Light canvas half (top) -->
+        <div class="flex-1 bg-white text-brand-navy relative flex flex-col justify-center items-center p-12 border-b border-brand-navy/10 logo-stage-grid">
+          <div class="absolute top-4 left-6 text-[10px] text-brand-navy/50 tracking-widest uppercase font-bold font-heading">Care Path Version 3.2 (Light Canvas)</div>
+          <img src="../logos/carepath2.svg" alt="Care Path 2 Light" class="h-[22vh] w-auto max-w-full object-contain">
+        </div>
+        <!-- Dark canvas half (bottom) -->
+        <div class="flex-1 bg-brand-navy text-white relative flex flex-col justify-center items-center p-12 logo-stage-grid-dark">
+          <div class="absolute top-4 left-6 text-[10px] text-white/40 tracking-widest uppercase font-bold font-heading">Care Path Version 3.2 (Dark Canvas)</div>
+          <img src="../logos/carepath2.svg" alt="Care Path 2 Dark" class="h-[22vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 25: CARE PATH 3 DEDICATED PAGE ================= -->
+      <div id="slide-25" class="absolute inset-0 w-full h-full flex flex-col slide-enter">
+        <!-- Light canvas half (top) -->
+        <div class="flex-1 bg-white text-brand-navy relative flex flex-col justify-center items-center p-12 border-b border-brand-navy/10 logo-stage-grid">
+          <div class="absolute top-4 left-6 text-[10px] text-brand-navy/50 tracking-widest uppercase font-bold font-heading">Care Path Version 3.3 (Light Canvas)</div>
+          <img src="../logos/carepath3.svg" alt="Care Path 3 Light" class="h-[22vh] w-auto max-w-full object-contain">
+        </div>
+        <!-- Dark canvas half (bottom) -->
+        <div class="flex-1 bg-brand-navy text-white relative flex flex-col justify-center items-center p-12 logo-stage-grid-dark">
+          <div class="absolute top-4 left-6 text-[10px] text-white/40 tracking-widest uppercase font-bold font-heading">Care Path Version 3.3 (Dark Canvas)</div>
+          <img src="../logos/carepath3.svg" alt="Care Path 3 Dark" class="h-[22vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 26: CARE PATH 4 DEDICATED PAGE ================= -->
+      <div id="slide-26" class="absolute inset-0 w-full h-full flex flex-col slide-enter">
+        <!-- Light canvas half (top) -->
+        <div class="flex-1 bg-white text-brand-navy relative flex flex-col justify-center items-center p-12 border-b border-brand-navy/10 logo-stage-grid">
+          <div class="absolute top-4 left-6 text-[10px] text-brand-navy/50 tracking-widest uppercase font-bold font-heading">Care Path Version 3.4 (Light Canvas)</div>
+          <img src="../logos/carepath4.svg" alt="Care Path 4 Light" class="h-[22vh] w-auto max-w-full object-contain">
+        </div>
+        <!-- Dark canvas half (bottom) -->
+        <div class="flex-1 bg-brand-navy text-white relative flex flex-col justify-center items-center p-12 logo-stage-grid-dark">
+          <div class="absolute top-4 left-6 text-[10px] text-white/40 tracking-widest uppercase font-bold font-heading">Care Path Version 3.4 (Dark Canvas)</div>
+          <img src="../logos/carepath4.svg" alt="Care Path 4 Dark" class="h-[22vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 27: CARE PATH WEB LOGO DEDICATED PAGE ================= -->
+      <div id="slide-27" class="absolute inset-0 w-full h-full flex flex-col slide-enter">
+        <!-- Light canvas half (top) -->
+        <div class="flex-1 bg-white text-brand-navy relative flex flex-col justify-center items-center p-12 border-b border-brand-navy/10 logo-stage-grid">
+          <div class="absolute top-4 left-6 text-[10px] text-brand-navy/50 tracking-widest uppercase font-bold font-heading">Care Path Web Logo (Light Canvas)</div>
+          <img src="../logos/carepath_web_logo.svg" alt="Care Path Web Light" class="h-[22vh] w-auto max-w-full object-contain">
+        </div>
+        <!-- Dark canvas half (bottom) -->
+        <div class="flex-1 bg-brand-navy text-white relative flex flex-col justify-center items-center p-12 logo-stage-grid-dark">
+          <div class="absolute top-4 left-6 text-[10px] text-white/40 tracking-widest uppercase font-bold font-heading">Care Path Web Logo (Dark Canvas)</div>
+          <img src="../logos/carepath_web_logo.svg" alt="Care Path Web Dark" class="h-[22vh] w-auto max-w-full object-contain" style="filter: brightness(0) invert(1);">
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 28: CONCEPT 03 APPLICATIONS ================= -->
+      <div id="slide-28" class="absolute inset-0 w-full h-full bg-brand-lightGray text-brand-navy flex flex-col justify-center p-8 slide-enter">
+        <div class="max-w-6xl w-full mx-auto">
+          <div>
+            <div class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase mb-2 font-heading">CONCEPT 03 APPLICATIONS</div>
+            <h2 class="text-3xl font-heading font-extrabold text-slate-900">Brand in Context</h2>
+          </div>
+          <div class="text-lg font-heading italic font-semibold text-brand-green font-bold font-heading">"A compassionate path to wellness."</div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <!-- Member App -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between aspect-[1.586/1]">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div class="flex items-center gap-2">
+                  <img src="../logos/carepath1.svg" alt="Concept 3 Logo" class="h-6 w-auto object-contain">
+                  <span class="text-xs font-heading font-extrabold text-brand-navy">SecureHealth</span>
+                </div>
+                <i class="ti ti-settings text-slate-400 text-sm"></i>
+              </div>
+              <div class="my-2 text-center">
+                <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">YOUR CARE PROGRESS</div>
+                <div class="text-lg font-heading font-extrabold text-slate-800 mt-0.5">80% Health Score</div>
+              </div>
+              <div class="bg-brand-green/10 text-brand-green rounded-xl p-2 text-center text-[10px] font-bold border border-brand-green/20">
+                Preventive Checkup Scheduled
+              </div>
+            </div>
+            <!-- Website Showcase -->
+            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md flex flex-col justify-between aspect-[1.586/1]">
+              <div class="w-full flex items-center justify-between bg-brand-green text-white p-3 rounded-xl">
+                <div class="flex items-center gap-2">
+                  <img src="../logos/carepath1.svg" alt="Concept 3 Logo" class="h-5 w-auto object-contain" style="filter: brightness(0) invert(1);">
+                  <span class="text-[8px] font-heading font-bold tracking-wider font-bold">SECURE HEALTH</span>
+                </div>
+              </div>
+              <div class="py-2 text-left">
+                <h4 class="text-[11px] font-bold text-slate-800">A compassionate path to wellness.</h4>
+                <p class="text-[8px] text-slate-400 mt-1">Simple guides, friendly advisors, trusted choices.</p>
+              </div>
+              <div class="bg-brand-navy text-white text-[8px] font-bold py-1 px-3 rounded text-center">
+                Start Health Assessment
+              </div>
+            </div>
+            <!-- Marketing Card -->
+            <div class="bg-gradient-to-tr from-brand-navy to-slate-900 text-white rounded-3xl p-6 shadow-xl relative overflow-hidden aspect-[1.586/1] flex flex-col justify-between">
+              <div class="absolute inset-0 watermark-pattern opacity-5 pointer-events-none"></div>
+              <div class="flex justify-between items-start">
+                <div class="text-[10px] font-bold text-white/50 uppercase tracking-widest font-heading">SecureHealth</div>
+                <i class="ti ti-heart text-brand-green text-sm animate-pulse"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-heading font-extrabold text-white">We place you first.</h4>
+                <p class="text-[9px] text-white/60 mt-1">Our people-first philosophy helps you choose coverage with zero sales pressure.</p>
+              </div>
+              <div class="text-[9px] text-brand-green font-semibold">Guided · Connected · Cared For</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SLIDE 29: FINAL COMPARISON PAGE ================= -->
+      <div id="slide-29" class="absolute inset-0 w-full h-full bg-brand-navy text-white flex flex-col justify-center p-8 slide-enter">
+        <div class="absolute inset-0 watermark-pattern opacity-15 pointer-events-none"></div>
+        <div class="max-w-6xl w-full mx-auto flex flex-col justify-between h-full py-6 overflow-y-auto">
+          
+          <div class="text-center">
+            <div class="text-xs font-bold tracking-[0.2em] text-brand-green uppercase mb-2 font-heading">DECISION MATRIX</div>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold">Three Directions. One Mission.</h2>
+            <p class="text-white/60 mt-2 text-sm max-w-xl mx-auto">Which direction best represents the brand values of Secure Health?</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+            <!-- Navigator -->
+            <div class="bg-white/5 rounded-2xl p-6 border border-white/10 flex flex-col items-center text-center justify-between">
+              <div class="flex flex-col items-center">
+                <div class="w-36 h-36 flex items-center justify-center mb-4">
+                  <img src="../logos/navigator1.svg" alt="Navigator logo" class="h-32 w-auto object-contain" style="filter: brightness(0) invert(1);">
+                </div>
+                <h4 class="font-heading font-bold text-lg text-white">01. THE NAVIGATOR</h4>
+                <div class="text-xs text-brand-blue font-bold tracking-wider uppercase mt-1">Protection + Guidance</div>
+                <p class="text-xs text-white/50 mt-4 leading-relaxed">
+                  Focuses on building confidence through navigation and structured guidelines. Very technology-forward.
+                </p>
+              </div>
+              <button onclick="voteDirection('The Navigator')" class="mt-6 w-full py-2 bg-brand-blue/20 hover:bg-brand-blue text-brand-blue hover:text-white rounded-lg text-xs font-bold transition">
+                Select Option 01
+              </button>
+            </div>
+
+            <!-- Connection -->
+            <div class="bg-white/5 rounded-2xl p-6 border border-white/10 flex flex-col items-center text-center justify-between">
+              <div class="flex flex-col items-center">
+                <div class="w-36 h-36 flex items-center justify-center mb-4">
+                  <img src="../logos/connection1.svg" alt="Connection logo" class="h-32 w-auto object-contain" style="filter: brightness(0) invert(1);">
+                </div>
+                <h4 class="font-heading font-bold text-lg text-white">02. THE CONNECTION</h4>
+                <div class="text-xs text-brand-violet font-bold tracking-wider uppercase mt-1">Security + Support</div>
+                <p class="text-xs text-white/50 mt-4 leading-relaxed">
+                  Highlights support channels, digital accessibility, and responsiveness. Emphasizes advisor connection.
+                </p>
+              </div>
+              <button onclick="voteDirection('The Connection')" class="mt-6 w-full py-2 bg-brand-violet/20 hover:bg-brand-violet text-brand-violet hover:text-white rounded-lg text-xs font-bold transition">
+                Select Option 02
+              </button>
+            </div>
+
+            <!-- Care Path -->
+            <div class="bg-white/5 rounded-2xl p-6 border border-white/10 flex flex-col items-center text-center justify-between">
+              <div class="flex flex-col items-center">
+                <div class="w-36 h-36 flex items-center justify-center mb-4">
+                  <img src="../logos/carepath1.svg" alt="Care Path logo" class="h-32 w-auto object-contain" style="filter: brightness(0) invert(1);">
+                </div>
+                <h4 class="font-heading font-bold text-lg text-white">03. THE CARE PATH</h4>
+                <div class="text-xs text-brand-green font-bold tracking-wider uppercase mt-1">People + Wellness</div>
+                <p class="text-xs text-white/50 mt-4 leading-relaxed">
+                  Focuses on organic health progress, preventive care, human empathy, and positive wellness journeys.
+                </p>
+              </div>
+              <button onclick="voteDirection('The Care Path')" class="mt-6 w-full py-2 bg-brand-green/20 hover:bg-brand-green text-brand-green hover:text-white rounded-lg text-xs font-bold transition">
+                Select Option 03
+              </button>
+            </div>
+          </div>
+
+          <div class="text-center text-xs text-white/40 tracking-wider">
+            &copy; 2026 SecureHealth · Built by Marcus Willis Design.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PRESENTATION DECK FOOTER NAVIGATION -->
+    <footer id="deck-footer" class="h-20 px-8 flex items-center justify-between border-t border-white/5 bg-brand-navy/60 backdrop-blur-md z-30 transition-all duration-300">
+      <div class="flex items-center gap-4">
+        <button onclick="prevSlide()" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 active:scale-95 transition text-white">
+          <i class="ti ti-chevron-left text-lg"></i>
+        </button>
+        <span class="text-xs font-mono text-white/50" id="slide-num">Slide 1 / 29</span>
+        <button onclick="toggleSidebar(event)" class="text-xs font-bold tracking-wider uppercase border border-white/10 bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition text-white/70 hover:text-white" title="Toggle Slide Index">
+          <i class="ti ti-menu-2"></i> Menu
+        </button>
+        <button onclick="nextSlide()" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 active:scale-95 transition text-white">
+          <i class="ti ti-chevron-right text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Slide Indicator Dots -->
+      <div class="hidden md:flex items-center gap-1.5" id="slide-dots">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="text-xs text-white/40 font-heading tracking-wider">
+        Built by Marcus Willis Design
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast" class="fixed bottom-24 right-8 bg-brand-green text-white font-bold text-xs py-3 px-6 rounded-xl shadow-2xl z-50 transform translate-y-12 opacity-0 transition duration-300">
+    Selection Saved!
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 29;
+    let presentMode = false;
+
+    // Show slide by index
+    function showSlide(index) {
+      if (index < 1) index = 1;
+      if (index > totalSlides) index = totalSlides;
+
+      // Deactivate all slides
+      for (let i = 1; i <= totalSlides; i++) {
+        const slide = document.getElementById(`slide-${i}`);
+        if (slide) {
+          slide.classList.remove('slide-active', 'z-20');
+          slide.classList.add('slide-enter');
+        }
+      }
+
+      // Activate target slide
+      const activeSlide = document.getElementById(`slide-${index}`);
+      if (activeSlide) {
+        activeSlide.classList.remove('slide-enter');
+        activeSlide.classList.add('slide-active', 'z-20');
+      }
+
+      currentSlide = index;
+      document.getElementById('slide-num').innerText = `Slide ${currentSlide} / ${totalSlides}`;
+
+      // Update dots active class
+      updateDots();
+
+      // Highlight active sidebar item
+      document.querySelectorAll('.sidebar-item').forEach(item => {
+        item.classList.remove('bg-brand-green/20', 'text-brand-green', 'border-l-2', 'border-brand-green', 'pl-2');
+        item.classList.add('text-white/70');
+      });
+      const activeItem = document.getElementById(`sidebar-item-${index}`);
+      if (activeItem) {
+        activeItem.classList.add('bg-brand-green/20', 'text-brand-green', 'border-l-2', 'border-brand-green', 'pl-2');
+        activeItem.classList.remove('text-white/70');
+      }
+    }
+
+    // Toggle Present Mode
+    function togglePresentMode() {
+      presentMode = !presentMode;
+      const header = document.getElementById('deck-header');
+      const footer = document.getElementById('deck-footer');
+      const btnText = document.getElementById('btn-present-text');
+
+      if (presentMode) {
+        header.classList.add('h-0', 'opacity-0', 'pointer-events-none');
+        footer.classList.add('h-0', 'opacity-0', 'pointer-events-none');
+        btnText.innerText = "Exit Present Mode";
+      } else {
+        header.classList.remove('h-0', 'opacity-0', 'pointer-events-none');
+        footer.classList.remove('h-0', 'opacity-0', 'pointer-events-none');
+        btnText.innerText = "Present Mode";
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        showSlide(currentSlide + 1);
+      }
+    }
+
+    // Revert dot colors
+    function updateDots() {
+      for (let i = 1; i <= totalSlides; i++) {
+        const dot = document.getElementById(`dot-${i}`);
+        if (dot) {
+          if (i === currentSlide) {
+            dot.className = `w-2 h-2 rounded-full bg-brand-green scale-125 transition`;
+          } else {
+            dot.className = `w-2 h-2 rounded-full bg-white/20 hover:bg-white/40 transition`;
+          }
+        }
+      }
+    }
+
+    // Build footer slide dots
+    function buildDots() {
+      const dotsContainer = document.getElementById('slide-dots');
+      dotsContainer.innerHTML = '';
+      for (let i = 1; i <= totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = `w-2 h-2 rounded-full bg-white/20 hover:bg-white/40 transition`;
+        dot.onclick = () => showSlide(i);
+        dot.id = `dot-${i}`;
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        showSlide(currentSlide - 1);
+      }
+    }
+
+    // Keyboard support
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key.toLowerCase() === 'p') {
+        togglePresentMode();
+      }
+    });
+
+    // Fullscreen support
+    function toggleFullscreen() {
+      const icon = document.getElementById('fs-icon');
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().then(() => {
+          icon.className = "ti ti-minimize text-lg";
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+          icon.className = "ti ti-maximize text-lg";
+        }
+      }
+    }
+
+    // Feedback voting toast
+    function voteDirection(name) {
+      const toast = document.getElementById('toast');
+      toast.innerText = `Selected Direction: ${name}`;
+      toast.classList.remove('translate-y-12', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-12', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2500);
+    }
+
+    
+    // Care Path slideshow controls
+    let currentCPLight = 1;
+    let currentCPDark = 1;
+    let currentCPDetail = 1;
+    const totalCP = 5;
+
+    function showCPDetail(index) {
+      if (index < 1) index = totalCP;
+      if (index > totalCP) index = 1;
+      for (let i = 1; i <= totalCP; i++) {
+        const slide = document.getElementById(`cp-detail-${i}`);
+        if (slide) {
+          slide.classList.add('hidden');
+        }
+      }
+      const active = document.getElementById(`cp-detail-${index}`);
+      if (active) {
+        active.classList.remove('hidden');
+      }
+      currentCPDetail = index;
+    }
+
+    function prevCarePathDetail(e) {
+      e.stopPropagation();
+      showCPDetail(currentCPDetail - 1);
+    }
+
+    function nextCarePathDetail(e) {
+      e.stopPropagation();
+      showCPDetail(currentCPDetail + 1);
+    }
+
+    function showCPLight(index) {
+      if (index < 1) index = totalCP;
+      if (index > totalCP) index = 1;
+      for (let i = 1; i <= totalCP; i++) {
+        const slide = document.getElementById(`cp-light-${i}`);
+        if (slide) {
+          slide.classList.add('hidden');
+        }
+      }
+      const active = document.getElementById(`cp-light-${index}`);
+      if (active) {
+        active.classList.remove('hidden');
+      }
+      currentCPLight = index;
+    }
+
+    function prevCarePathLight(e) {
+      e.stopPropagation();
+      showCPLight(currentCPLight - 1);
+    }
+
+    function nextCarePathLight(e) {
+      e.stopPropagation();
+      showCPLight(currentCPLight + 1);
+    }
+
+    function showCPDark(index) {
+      if (index < 1) index = totalCP;
+      if (index > totalCP) index = 1;
+      for (let i = 1; i <= totalCP; i++) {
+        const slide = document.getElementById(`cp-dark-${i}`);
+        if (slide) {
+          slide.classList.add('hidden');
+        }
+      }
+      const active = document.getElementById(`cp-dark-${index}`);
+      if (active) {
+        active.classList.remove('hidden');
+      }
+      currentCPDark = index;
+    }
+
+    function prevCarePathDark(e) {
+      e.stopPropagation();
+      showCPDark(currentCPDark - 1);
+    }
+
+    function nextCarePathDark(e) {
+      e.stopPropagation();
+      showCPDark(currentCPDark + 1);
+    }
+
+    // Sidebar Controls
+    function toggleSidebar(e) {
+      if (e) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      const menu = document.getElementById('sidebar-menu');
+      const overlay = document.getElementById('sidebar-overlay');
+      const isHidden = menu.classList.contains('-translate-x-full');
+      
+      if (isHidden) {
+        menu.classList.remove('-translate-x-full');
+        overlay.classList.remove('hidden');
+        setTimeout(() => {
+          overlay.classList.remove('opacity-0');
+          overlay.classList.add('opacity-100');
+        }, 10);
+      } else {
+        menu.classList.add('-translate-x-full');
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0');
+        setTimeout(() => {
+          overlay.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    function goToSlide(index, e) {
+      if (e) {
+        e.stopPropagation();
+        e.preventDefault();
+      }
+      showSlide(index);
+      toggleSidebar();
+    }
+
+    // Init
+    buildDots();
+    showSlide(1);
+  </script>
+</body>
+</html>
